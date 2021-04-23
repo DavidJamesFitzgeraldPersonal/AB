@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "/K9oPmHEanPUr0hq7dkKbYMkWkSMeSZVPaHFLdt16DkZYzqlOEgedYnsSSdKm2bYbu5HmPP7DbL/uqTk0G/dGw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Fitzgerald.David\\Downloads\\UniProject\\UniProject\\UniProject.iOS\\UniProject.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Fitzgerald.David\\.nuget\\packages\\plugin.ble\\2.1.1\\plugin.ble.2.1.1.nupkg.sha512",
+    "C:\\Users\\Fitzgerald.David\\.nuget\\packages\\plugin.fingerprint\\2.1.4\\plugin.fingerprint.2.1.4.nupkg.sha512",
+    "C:\\Users\\Fitzgerald.David\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
+  ],
+  "logs": []
+}
