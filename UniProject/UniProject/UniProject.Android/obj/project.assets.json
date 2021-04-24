@@ -28,6 +28,22 @@
           "lib/monoandroid90/Plugin.Fingerprint.dll": {}
         }
       },
+      "Plugin.Permissions/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Core": "1.1.0",
+          "Xamarin.Essentials": "1.5.2"
+        },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid10.0/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid10.0/Plugin.Permissions.dll": {}
+        }
+      },
       "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
@@ -1024,6 +1040,7 @@
         "dependencies": {
           "Plugin.BLE": "2.1.1",
           "Plugin.Fingerprint": "2.1.4",
+          "Plugin.Permissions": "6.0.1",
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012"
         },
@@ -1110,6 +1127,37 @@
         "plugin.fingerprint.nuspec",
         "readme.txt",
         "xamarin_fingerprint.png"
+      ]
+    },
+    "Plugin.Permissions/6.0.1": {
+      "sha512": "na/0FNhyKmSicANWZMLSM0y/FW2AvLoawX3lsvBpELwP15sdJRyuBhRKk1OQjRoNrmTIewcON1tJFyydjMGWcA==",
+      "type": "package",
+      "path": "plugin.permissions/6.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid10.0/Plugin.Permissions.dll",
+        "lib/monoandroid10.0/Plugin.Permissions.pdb",
+        "lib/monoandroid80/Plugin.Permissions.dll",
+        "lib/monoandroid80/Plugin.Permissions.pdb",
+        "lib/monoandroid81/Plugin.Permissions.dll",
+        "lib/monoandroid81/Plugin.Permissions.pdb",
+        "lib/monoandroid90/Plugin.Permissions.dll",
+        "lib/monoandroid90/Plugin.Permissions.pdb",
+        "lib/netstandard1.0/Plugin.Permissions.dll",
+        "lib/netstandard1.0/Plugin.Permissions.pdb",
+        "lib/netstandard2.0/Plugin.Permissions.dll",
+        "lib/netstandard2.0/Plugin.Permissions.pdb",
+        "lib/uap10.0.16299/Plugin.Permissions.dll",
+        "lib/uap10.0.16299/Plugin.Permissions.pdb",
+        "lib/uap10.0.16299/Plugin.Permissions.pri",
+        "lib/xamarinios10/Plugin.Permissions.dll",
+        "lib/xamarinios10/Plugin.Permissions.pdb",
+        "lib/xamarintvos10/Plugin.Permissions.dll",
+        "lib/xamarintvos10/Plugin.Permissions.pdb",
+        "plugin.permissions.6.0.1.nupkg.sha512",
+        "plugin.permissions.nuspec",
+        "readme.txt"
       ]
     },
     "System.Numerics.Vectors/4.5.0": {
@@ -2286,24 +2334,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Fitzgerald.David\\.nuget\\packages\\": {},
+    "C:\\Users\\david\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject.Android\\UniProject.Android.csproj",
+      "projectUniqueName": "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject.Android\\UniProject.Android.csproj",
       "projectName": "UniProject.Android",
-      "projectPath": "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject.Android\\UniProject.Android.csproj",
-      "packagesPath": "C:\\Users\\Fitzgerald.David\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject.Android\\obj\\",
+      "projectPath": "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject.Android\\UniProject.Android.csproj",
+      "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Fitzgerald.David\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2317,8 +2368,8 @@
       "frameworks": {
         "monoandroid10.0": {
           "projectReferences": {
-            "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject\\UniProject.csproj": {
-              "projectPath": "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject\\UniProject.csproj"
+            "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject\\UniProject.csproj": {
+              "projectPath": "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject\\UniProject.csproj"
             }
           }
         }
