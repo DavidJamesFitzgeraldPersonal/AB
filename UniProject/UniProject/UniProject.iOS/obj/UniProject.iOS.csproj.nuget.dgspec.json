@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Fitzgerald.David\\Downloads\\UniProject\\UniProject\\UniProject.iOS\\UniProject.iOS.csproj": {}
+    "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject.iOS\\UniProject.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Fitzgerald.David\\Downloads\\UniProject\\UniProject\\UniProject.iOS\\UniProject.iOS.csproj": {
+    "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject.iOS\\UniProject.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fitzgerald.David\\Downloads\\UniProject\\UniProject\\UniProject.iOS\\UniProject.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject.iOS\\UniProject.iOS.csproj",
         "projectName": "UniProject.iOS",
-        "projectPath": "C:\\Users\\Fitzgerald.David\\Downloads\\UniProject\\UniProject\\UniProject.iOS\\UniProject.iOS.csproj",
+        "projectPath": "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject.iOS\\UniProject.iOS.csproj",
         "packagesPath": "C:\\Users\\Fitzgerald.David\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fitzgerald.David\\Downloads\\UniProject\\UniProject\\UniProject.iOS\\obj\\",
+        "outputPath": "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Users\\Fitzgerald.David\\Downloads\\UniProject\\UniProject\\UniProject\\UniProject.csproj": {
-                "projectPath": "C:\\Users\\Fitzgerald.David\\Downloads\\UniProject\\UniProject\\UniProject\\UniProject.csproj"
+              "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject\\UniProject.csproj": {
+                "projectPath": "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject\\UniProject.csproj"
               }
             }
           }
@@ -73,14 +73,14 @@
         }
       }
     },
-    "C:\\Users\\Fitzgerald.David\\Downloads\\UniProject\\UniProject\\UniProject\\UniProject.csproj": {
+    "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject\\UniProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fitzgerald.David\\Downloads\\UniProject\\UniProject\\UniProject\\UniProject.csproj",
+        "projectUniqueName": "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject\\UniProject.csproj",
         "projectName": "UniProject",
-        "projectPath": "C:\\Users\\Fitzgerald.David\\Downloads\\UniProject\\UniProject\\UniProject\\UniProject.csproj",
+        "projectPath": "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject\\UniProject.csproj",
         "packagesPath": "C:\\Users\\Fitzgerald.David\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fitzgerald.David\\Downloads\\UniProject\\UniProject\\UniProject\\obj\\",
+        "outputPath": "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

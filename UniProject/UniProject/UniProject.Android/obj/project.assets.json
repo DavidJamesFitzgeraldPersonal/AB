@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "MonoAndroid,Version=v11.0": {
+    "MonoAndroid,Version=v10.0": {
       "Plugin.BLE/2.1.1": {
         "type": "package",
         "compile": {
@@ -2277,7 +2277,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "MonoAndroid,Version=v11.0": [
+    "MonoAndroid,Version=v10.0": [
       "Plugin.BLE >= 2.1.1",
       "Plugin.Fingerprint >= 2.1.4",
       "UniProject >= 1.0.0",
@@ -2292,11 +2292,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fitzgerald.David\\Downloads\\UniProject\\UniProject\\UniProject.Android\\UniProject.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject.Android\\UniProject.Android.csproj",
       "projectName": "UniProject.Android",
-      "projectPath": "C:\\Users\\Fitzgerald.David\\Downloads\\UniProject\\UniProject\\UniProject.Android\\UniProject.Android.csproj",
+      "projectPath": "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject.Android\\UniProject.Android.csproj",
       "packagesPath": "C:\\Users\\Fitzgerald.David\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fitzgerald.David\\Downloads\\UniProject\\UniProject\\UniProject.Android\\obj\\",
+      "outputPath": "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2308,24 +2308,24 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "monoandroid11.0"
+        "monoandroid10.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "monoandroid11.0": {
+        "monoandroid10.0": {
           "projectReferences": {
-            "C:\\Users\\Fitzgerald.David\\Downloads\\UniProject\\UniProject\\UniProject\\UniProject.csproj": {
-              "projectPath": "C:\\Users\\Fitzgerald.David\\Downloads\\UniProject\\UniProject\\UniProject\\UniProject.csproj"
+            "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject\\UniProject.csproj": {
+              "projectPath": "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject\\UniProject.csproj"
             }
           }
         }
       }
     },
     "frameworks": {
-      "monoandroid11.0": {
+      "monoandroid10.0": {
         "dependencies": {
           "Plugin.BLE": {
             "target": "Package",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UYh1/0kI/+ioV00IlQo45sIfPh+B+YVhGExy2dKh6rSS1qeHHCsVck+zn4uQ1BB4dlHTvEhpRZu9Ikl/vajn1g==",
+  "dgSpecHash": "rgvTfZZa0/piaCt0qnUlbOTVaxzKa9NJZj8sJ+rDTrKTGmofrQJzP1AE/EOeWQTRWcLkWqyJtCizcUp8X37D2w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Fitzgerald.David\\Downloads\\UniProject\\UniProject\\UniProject.Android\\UniProject.Android.csproj",
+  "projectFilePath": "C:\\Users\\Fitzgerald.David\\Documents\\AB\\UniProject\\UniProject\\UniProject.Android\\UniProject.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Fitzgerald.David\\.nuget\\packages\\plugin.ble\\2.1.1\\plugin.ble.2.1.1.nupkg.sha512",
     "C:\\Users\\Fitzgerald.David\\.nuget\\packages\\plugin.fingerprint\\2.1.4\\plugin.fingerprint.2.1.4.nupkg.sha512",
