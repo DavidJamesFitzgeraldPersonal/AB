@@ -7,6 +7,7 @@ public class MonoPackageManager_Resources {
 		"Plugin.BLE.Abstractions.dll",
 		"Plugin.BLE.dll",
 		"Plugin.Fingerprint.dll",
+		"Plugin.Permissions.dll",
 		"UniProject.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.Annotation.dll",

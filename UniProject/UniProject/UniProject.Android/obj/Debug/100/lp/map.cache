@@ -1,6 +1,7 @@
 FormsViewGroup.dll
 Plugin.BLE.dll
 Plugin.Fingerprint.dll
+Plugin.Permissions.dll
 Xamarin.AndroidX.Activity.dll
 Xamarin.AndroidX.Annotation.dll
 Xamarin.AndroidX.Annotation.Experimental.dll

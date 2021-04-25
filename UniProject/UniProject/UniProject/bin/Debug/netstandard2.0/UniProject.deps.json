@@ -12,6 +12,7 @@
           "NETStandard.Library": "2.0.3",
           "Plugin.BLE": "2.1.1",
           "Plugin.Fingerprint": "2.1.4",
+          "Plugin.Permissions": "6.0.1",
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012"
         },
@@ -42,6 +43,17 @@
           "lib/netstandard2.0/Plugin.Fingerprint.dll": {
             "assemblyVersion": "2.1.4.0",
             "fileVersion": "2.1.4.0"
+          }
+        }
+      },
+      "Plugin.Permissions/6.0.1": {
+        "dependencies": {
+          "Xamarin.Essentials": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Plugin.Permissions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -115,6 +127,13 @@
       "sha512": "sha512-JwmvyQ8KF/prPx/Aflt1Mlstz6K5KL7K7z6kqTp9EG113/wCaRDa9VOY4qdDahjufijeNDJ+mwEys7IbvsAjUA==",
       "path": "plugin.fingerprint/2.1.4",
       "hashPath": "plugin.fingerprint.2.1.4.nupkg.sha512"
+    },
+    "Plugin.Permissions/6.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-na/0FNhyKmSicANWZMLSM0y/FW2AvLoawX3lsvBpELwP15sdJRyuBhRKk1OQjRoNrmTIewcON1tJFyydjMGWcA==",
+      "path": "plugin.permissions/6.0.1",
+      "hashPath": "plugin.permissions.6.0.1.nupkg.sha512"
     },
     "System.Numerics.Vectors/4.5.0": {
       "type": "package",
