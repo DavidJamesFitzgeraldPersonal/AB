@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Xamarin.Forms;
-using Plugin.Fingerprint;
-using Plugin.Fingerprint.Abstractions;
 
 namespace UniProject
 {
@@ -23,13 +20,21 @@ namespace UniProject
             }
             else
             {
-                if (false == ViewModels.VM_UserAuthentication._FingerPrintAuthenticationUsed)
+                if (ViewModels.VM_UserAuthentication._FingerPrintAuthenticationUsed)
                 {
-                    await DisplayAlert("ERROR!", "TODO: The device does not make use of finger print authentication","OK");
+                    proceed = await ViewModels.VM_UserAuthentication.CheckFingerPrintIsAuthenticated();
+
                 }
                 else
-                {                                
-                    proceed = await ViewModels.VM_UserAuthentication.CheckFingerPrintIsAuthenticated();                 
+                {
+                    if (ViewModels.VM_UserAuthentication._FingerPrintAuthenticationPossible)
+                    {
+                        await DisplayAlert("ERROR!", "Ensure at least one finger print is enrolled for user identification.", "OK");
+                    }
+                    else
+                    {
+                        await DisplayAlert("ERROR!", "This device does not support finger print identifaction.", "OK");
+                    }
                 }
             }
 

@@ -57,3 +57,4 @@ C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj
 C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.dll
 C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\ref\UniProject.dll
 C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.pdb
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.csprojAssemblyReference.cache

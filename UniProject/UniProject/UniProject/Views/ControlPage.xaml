@@ -1,20 +1,94 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="UniProject.ControlPage">
-    <ContentPage.Content>
-        <StackLayout VerticalOptions="Center"
-                 Margin="20">
-            <Button x:Name="SelectBluetoothButton" 
-                    Text="Select Bluetooth Device"
-                    Clicked="SelectBluetoothButton_Clicked"
-                    Style="{StaticResource normalButton}" />
 
-            <Switch x:Name="LockUnlock"
-                    HorizontalOptions="Center"
-                    Toggled="LockUnlock_Toggled"/>
-            <Label HorizontalOptions="Center" 
-                Text="Lock / Unlock Door" />
+    <ContentPage IconImageSource="outline_sensor_door_black_24.png">
+        <StackLayout VerticalOptions="Center"
+                     Margin="20">
+
+            <ListView ItemsSource="{Binding Path=_Devices}"
+                          SelectedItem="{Binding Path=_SelectedDevice, Mode=TwoWay}"
+                            HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="1" Text="{Binding Path=_Name}"/>
+                                <Label Grid.Column="2" Text="{Binding Path=_Address}"/>
+                                <Image Grid.Column="0" Source="{Binding Path=_Image}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+    </ContentPage>
+
+    <ContentPage IconImageSource="outline_add_circle_outline_black_24.png">
+        <StackLayout VerticalOptions="Center"
+                     Margin="20">
+
+            <ListView ItemsSource="{Binding Path=_Devices}"
+                          SelectedItem="{Binding Path=_SelectedDevice, Mode=TwoWay}"
+                            HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0" Text="{Binding Path=_Name}"/>
+                                <Label Grid.Column="1" Text="{Binding Path=_Address}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage IconImageSource="outline_remove_circle_outline_black_24.png">
+        <StackLayout VerticalOptions="Center"
+                     Margin="20">
+
+            <ListView ItemsSource="{Binding Path=_Devices}"
+                          SelectedItem="{Binding Path=_SelectedDevice, Mode=TwoWay}"
+                            HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="1" Text="{Binding Path=_Name}"/>
+                                <Label Grid.Column="2" Text="{Binding Path=_Address}"/>
+                                <Image Grid.Column="0" Source="{Binding Path=_Image}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>

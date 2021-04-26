@@ -1,25 +1,18 @@
-﻿using Plugin.BLE;
-using Plugin.BLE.Abstractions.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace UniProject
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ControlPage : ContentPage
+    public partial class ControlPage : TabbedPage
     {
-
-        private readonly IAdapter _bluetoothAdapter;
+        //private readonly IAdapter _bluetoothAdapter;
+        
         public ControlPage()
         {
             InitializeComponent();
-
+            BindingContext = new ViewModel_ControlPage();
+            /*
             _bluetoothAdapter = CrossBluetoothLE.Current.Adapter;
             _bluetoothAdapter.DeviceDiscovered += (sender, foundBleDevice) =>
             {
@@ -28,16 +21,7 @@ namespace UniProject
 
                 }
             };
-        }
-
-        private void SelectBluetoothButton_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void LockUnlock_Toggled(object sender, ToggledEventArgs e)
-        {
+            */
 
         }
     }
