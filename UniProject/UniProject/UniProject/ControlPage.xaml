@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UniProject.ControlPage">
+    <StackLayout VerticalOptions="Center"
+                     Margin="20">
+
+        <ListView ItemsSource="{Binding Path=_ConnectedDevices}"
+                          SelectedItem="{Binding Path=_SelectedConnectedDevice, Mode=TwoWay}"
+                            HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.Column="0" Source="{Binding Path=_Image}"/>
+                            <Label Grid.Column="1" Text="{Binding Path=_Name}"/>
+                            <Label Grid.Column="2" Text="{Binding Path=_Address}"/>
+
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

@@ -1,11 +1,10 @@
 ﻿using Xamarin.Forms;
 
-namespace UniProject
+namespace UniProject.Models
 { 
     public class Model_Device : BindableObject
     {
         #region Properties
-        public string _Address { get; }
         public string _Name { get; }
 
         private string _image;
@@ -47,10 +46,9 @@ namespace UniProject
         #endregion
 
         #region Constructor
-        public Model_Device(string name, string addr, bool initial)
+        public Model_Device(string name, bool initial)
         {
             _Name = name;
-            _Address = addr;
             _IsLocked = initial;
         }
         #endregion

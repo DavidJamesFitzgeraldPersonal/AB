@@ -14,7 +14,7 @@ namespace UniProject {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("ControlPage.xaml")]
-    public partial class ControlPage : global::Xamarin.Forms.TabbedPage {
+    public partial class ControlPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {

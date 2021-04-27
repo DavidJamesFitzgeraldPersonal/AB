@@ -1,15 +1,13 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Xamarin.Forms;
-
-namespace UniProject
-{ 
+namespace UniProject.ViewModels
+{
     public class ViewModel_ControlPage : BindableObject
     {
         #region Properties
-        private Model_Device _selectedDevice = null;
-
-        public Model_Device _SelectedDevice
+        private Models.Model_Device _selectedDevice = null;
+        public Models.Model_Device _SelectedDevice
         {
             get { return _selectedDevice; }
             set
@@ -23,19 +21,19 @@ namespace UniProject
                 DoDeviceSelected();
 
                 // Set to null to deselect the device
-                _SelectedDevice = null;
+                _selectedDevice = null;
             }
         }
 
-        private ObservableCollection<Model_Device> _devices;
-        public ObservableCollection<Model_Device> _Devices
+        private ObservableCollection<Models.Model_Device> _connectedDevices;
+        public ObservableCollection<Models.Model_Device> _ConnectedDevices
         {
-            get { return _devices; }
+            get { return _connectedDevices; }
             set
             {
-                if (value == _devices)
+                if (value == _connectedDevices)
                     return;
-                _devices = value;
+                _connectedDevices = value;
                 OnPropertyChanged();
             }
         }
@@ -56,12 +54,11 @@ namespace UniProject
         #region Constructor
         public ViewModel_ControlPage()
         {
-              _Devices = new ObservableCollection<Model_Device>();
-              _Devices.Add(new Model_Device("front door", "12:34:56:78", true));
-              _Devices.Add(new Model_Device("back door", "AB:CD:EF:00", true));
+            _ConnectedDevices = new ObservableCollection<Models.Model_Device>();
 
             // Bind Commands
             _DeviceSelected = new Command(DoDeviceSelected);
+
         }
         #endregion
     }
