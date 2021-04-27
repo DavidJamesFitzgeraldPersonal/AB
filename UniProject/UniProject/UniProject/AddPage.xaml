@@ -4,7 +4,11 @@
              x:Class="UniProject.AddPage">
     <StackLayout VerticalOptions="Center"
                      Margin="20">
-
+        
+        <Button Text="{Binding Path=_ScanState}"
+                Command="{Binding Path=_ScanSelected}"
+                IsEnabled="{Binding Path=_AllowScan}"/>
+        
         <ListView ItemsSource="{Binding Path=_AvailableBleDevices}"
                           SelectedItem="{Binding Path=_SelectedAvailableDevice, Mode=TwoWay}"
                             HasUnevenRows="true">

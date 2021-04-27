@@ -60,3 +60,4 @@ C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject\obj\Debu
 C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.dll
 C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\ref\UniProject.dll
 C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.pdb
+C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.csprojAssemblyReference.cache

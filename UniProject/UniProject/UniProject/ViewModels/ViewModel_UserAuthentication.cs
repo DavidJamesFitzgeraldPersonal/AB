@@ -23,7 +23,7 @@ namespace UniProject.ViewModels
         public static async void CheckAuthenticationIsAvailable()
         {
             FingerprintAvailability available = await CrossFingerprint.Current.GetAvailabilityAsync(false);
-             
+
             switch (available)
             {
                 case FingerprintAvailability.Available:

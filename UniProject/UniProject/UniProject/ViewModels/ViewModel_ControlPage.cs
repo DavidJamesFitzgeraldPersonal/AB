@@ -47,6 +47,8 @@ namespace UniProject.ViewModels
             {
                 //TODO just toggle is locked for now
                 _SelectedDevice._IsLocked = !_SelectedDevice._IsLocked;
+
+
             }
         }
         #endregion
