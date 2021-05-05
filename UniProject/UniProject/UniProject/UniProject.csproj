@@ -20,6 +20,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Images\Splash.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Images\Splash.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Plugin.BLE" Version="2.1.1" />
     <PackageReference Include="Plugin.Fingerprint" Version="2.1.4" />
     <PackageReference Include="Plugin.Permissions" Version="6.0.1" />

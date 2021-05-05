@@ -1,12 +1,25 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Plugin.BLE;
+using Plugin.BLE.Abstractions.Exceptions;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+
 namespace UniProject.ViewModels
 {
     public class ViewModel_ControlPage : BindableObject
     {
+        #region Privates
+        private static System.Timers.Timer _backgroundTimer = new System.Timers.Timer(200);
+
+        private static Plugin.BLE.Abstractions.Contracts.IAdapter _bleHW;
+        #endregion
+
         #region Properties
-        private Models.Model_Device _selectedDevice = null;
+        private Models.Model_Device _selectedDevice;
         public Models.Model_Device _SelectedDevice
         {
             get { return _selectedDevice; }
@@ -19,21 +32,31 @@ namespace UniProject.ViewModels
 
                 // Catch the change in item
                 DoDeviceSelected();
-
-                // Set to null to deselect the device
-                _selectedDevice = null;
             }
         }
 
-        private ObservableCollection<Models.Model_Device> _connectedDevices;
-        public ObservableCollection<Models.Model_Device> _ConnectedDevices
+        private ObservableCollection<Models.Model_Device> _devices;
+        public ObservableCollection<Models.Model_Device> _Devices
         {
-            get { return _connectedDevices; }
+            get { return _devices; }
             set
             {
-                if (value == _connectedDevices)
+                if (value == _devices)
                     return;
-                _connectedDevices = value;
+                _devices = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _scanningString = "";
+        public string _ScanningString
+        {
+            get { return _scanningString; }
+            set
+            {
+                if (value == _scanningString)
+                    return;
+                _scanningString = value;
                 OnPropertyChanged();
             }
         }
@@ -45,23 +68,267 @@ namespace UniProject.ViewModels
         {
             if (null != _SelectedDevice)
             {
-                //TODO just toggle is locked for now
-                _SelectedDevice._IsLocked = !_SelectedDevice._IsLocked;
-
-
+                try
+                {
+                    if (Models.Model_Device.LockState.LOCKED == _SelectedDevice._LockState)
+                    {
+                        _SelectedDevice._CommandedState = Models.Model_Device.LockState.UNLOCKED;
+                    }
+                    if (Models.Model_Device.LockState.UNLOCKED == _SelectedDevice._LockState)
+                    {
+                        _SelectedDevice._CommandedState = Models.Model_Device.LockState.LOCKED;
+                    }
+                    if (Models.Model_Device.LockState.UNKNOWN == _SelectedDevice._LockState)
+                    {
+                        _SelectedDevice._CommandedState = Models.Model_Device.LockState.LOCKED;
+                    }
+                    _SelectedDevice = null;
+                }
+                catch (Exception e)
+                {
+                    // ... could not connect to device
+                    int i = 0;
+                }
             }
+        }
+        #endregion
+
+        #region Events
+        private void _backgroundTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            _backgroundTimer.Stop();
+            DoBLEScan();
         }
         #endregion
 
         #region Constructor
         public ViewModel_ControlPage()
         {
-            _ConnectedDevices = new ObservableCollection<Models.Model_Device>();
-
             // Bind Commands
             _DeviceSelected = new Command(DoDeviceSelected);
 
+            _Devices = new ObservableCollection<Models.Model_Device>();
+
+            _bleHW = CrossBluetoothLE.Current.Adapter;
+            _bleHW.ScanMode = Plugin.BLE.Abstractions.Contracts.ScanMode.LowLatency;
+            _bleHW.ScanTimeout = 100;
+            _bleHW.DeviceDiscovered += (sender, events) =>
+            {
+                DoDeviceFound(events.Device);
+            };
+            _bleHW.ScanTimeoutElapsed += (sender, events) =>
+            {
+                DoScanTimeout();
+            };
+            _bleHW.DeviceConnected += (sender, events) =>
+            {
+                DoDeviceConnected(events.Device);
+            };
+            _bleHW.DeviceDisconnected += (sender, events) =>
+            {
+                foreach (Models.Model_Device existingDev in _devices)
+                {
+                    if (existingDev._Connection._Dev.Id == events.Device.Id)
+                    {
+                        existingDev._Connection._Old = true;
+                    }
+                }
+            };
+            _bleHW.DeviceConnectionLost += (sender, events) =>
+            {
+                foreach (Models.Model_Device existingDev in _devices)
+                {
+                    if (existingDev._Connection._Dev.Id == events.Device.Id)
+                    {
+                        existingDev._Connection._Old = true;
+                    }
+                }
+            };
+            _backgroundTimer.Elapsed += _backgroundTimer_Elapsed;
+            DoBLEScan();
         }
         #endregion
+
+        private void DoBLEScan()
+        {
+            if (false == _bleHW.IsScanning)
+            {
+                try
+                {
+                    _ScanningString = "Scanning...";
+                    _bleHW.StartScanningForDevicesAsync();
+                }
+                catch (Exception ex)
+                {
+                    int i = 0;
+                }
+            }
+        }
+        private void DoScanTimeout()
+        {
+            if (false == _bleHW.IsScanning)
+            {
+                _bleHW.StopScanningForDevicesAsync();
+                _ScanningString = "";
+                
+                int k = _Devices.Count;
+                for (int i = 0; i < k; i++)
+                {
+                    if (_Devices[i]._Connection._Old && _Devices[i] != null)
+                    {
+                        _Devices.RemoveAt(i);
+                    }
+                }
+
+                DoStateUpdates();
+            }
+        }
+        private void DoDeviceFound(Plugin.BLE.Abstractions.Contracts.IDevice founddDev)
+        {
+            if ("SH-HC-08" == founddDev.Name)
+            {
+                bool found = false;
+
+                foreach (Models.Model_Device existingDev in _devices)
+                {
+                    if (founddDev.Id == existingDev._Connection._Dev.Id)
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (false == found)
+                {
+                    try
+                    {
+                        _bleHW.ConnectToDeviceAsync(founddDev);
+                    }
+                    catch (DeviceConnectionException ex)
+                    {
+                        int i = 0;
+                    }
+                    catch (Exception e)
+                    {
+                        // ... could not connect to device
+                        int i = 0;
+                    }
+                }
+            }
+        }
+        private void DoDeviceConnected(Plugin.BLE.Abstractions.Contracts.IDevice founddDev)
+        {
+            Models.Model_Device Dev = new Models.Model_Device(founddDev.Name);
+            Dev._Connection = new Models.Model_BleConnection(founddDev);
+            _Devices.Add(Dev);
+        }
+        private void DoStateUpdates()
+        {
+            foreach (Models.Model_Device existingDev in _Devices)
+            {
+                DoUpdate(existingDev);
+            }
+            _backgroundTimer.Start();
+        }
+        private void DoUpdate(Models.Model_Device thisDev)
+        {
+            if (false == _bleHW.IsScanning)
+            {
+                try
+                {
+                    if (thisDev._LockState != thisDev._CommandedState)
+                    {
+                        byte[] Data = new byte[1];
+                        switch (thisDev._CommandedState)
+                        {
+                            case Models.Model_Device.LockState.LOCKED:
+                                Data[0] = 0x31;
+                                break;
+                            case Models.Model_Device.LockState.UNLOCKED:
+                                Data[0] = 0x30;
+                                break;
+                            default:
+                                // Lock for safety
+                                Data[0] = 0x31;
+                                break;
+                        }
+                        DoWriteState(thisDev, Data);
+                    }
+
+                    DoReadState(thisDev);
+                }
+                catch (DeviceConnectionException ex)
+                {
+                    int i = 0;
+                }
+                catch (Exception e)
+                {
+                    // ... could not connect to device
+                    int i = 0;
+                }
+            }
+        }
+        private async void DoReadState(Models.Model_Device connectedDev)
+        {
+            if (false == _bleHW.IsScanning)
+            {
+                try
+                {
+                    var service = await connectedDev._Connection._Dev.GetServiceAsync(Guid.Parse("0000FFE0-0000-1000-8000-00805F9B34FB"));
+                    var characteristic = await service.GetCharacteristicAsync(Guid.Parse("0000FFE1-0000-1000-8000-00805F9B34FB"));
+                    var bytes = await characteristic.ReadAsync();
+
+                    if (bytes.Length > 1)
+                    {
+                        connectedDev._LockState = Models.Model_Device.LockState.UNKNOWN;
+                    }
+                    else
+                    {
+                        if (bytes[0] == 0x30)
+                        {
+                            connectedDev._LockState = Models.Model_Device.LockState.UNLOCKED;
+                        }
+                        else if (bytes[0] == 0x31)
+                        {
+                            connectedDev._LockState = Models.Model_Device.LockState.LOCKED;
+                        }
+                        else
+                        {
+                            connectedDev._LockState = Models.Model_Device.LockState.UNKNOWN;
+                        }
+                    }
+                }
+                catch (DeviceConnectionException ex)
+                {
+                    int i = 0;
+                }
+                catch (Exception e)
+                {
+                    // ... could not connect to device
+                    int i = 0;
+                }
+            }
+        }
+        private async void DoWriteState(Models.Model_Device connectedDev, byte[] data)
+        {
+            if (false == _bleHW.IsScanning)
+            {
+                try
+                {
+                    var service = await connectedDev._Connection._Dev.GetServiceAsync(Guid.Parse("0000FFE0-0000-1000-8000-00805F9B34FB"));
+                    var characteristic = await service.GetCharacteristicAsync(Guid.Parse("0000FFE1-0000-1000-8000-00805F9B34FB"));
+                    var bytes = await characteristic.WriteAsync(data);
+                }
+                catch (DeviceConnectionException ex)
+                {
+                    int i = 0;
+                }
+                catch (Exception e)
+                {
+                    // ... could not connect to device
+                    int i = 0;
+                }
+            }
+        }
     }
 }

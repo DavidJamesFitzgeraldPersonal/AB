@@ -9,9 +9,8 @@
                 Command="{Binding Path=_ScanSelected}"
                 IsEnabled="{Binding Path=_AllowScan}"/>
         
-        <ListView ItemsSource="{Binding Path=_AvailableBleDevices}"
-                          SelectedItem="{Binding Path=_SelectedAvailableDevice, Mode=TwoWay}"
-                            HasUnevenRows="true">
+        <ListView ItemsSource="{Binding Path=_AvailableBleDevices, Mode=TwoWay}"
+                          SelectedItem="{Binding Path=_SelectedDevice, Mode=TwoWay}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

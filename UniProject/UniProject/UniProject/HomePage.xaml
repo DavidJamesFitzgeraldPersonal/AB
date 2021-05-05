@@ -5,7 +5,7 @@
              x:Class="UniProject.HomePage">
 
     <local:ControlPage Icon="outline_sensor_door_black_24.png"/>
-    <local:AddPage Icon="outline_add_circle_outline_black_24.png"/>
-    <local:RemovePage Icon="outline_remove_circle_outline_black_24.png"/>
-    
+    <!-- <local:AddPage Icon="outline_add_circle_outline_black_24.png"/> -->
+    <!-- <local:RemovePage Icon="outline_remove_circle_outline_black_24.png"/>-->
+
 </TabbedPage>

@@ -4,6 +4,15 @@ namespace UniProject.Models
 { 
     public class Model_Device : BindableObject
     {
+        #region Enums
+        public enum LockState
+        {
+            UNKNOWN,
+            UNLOCKED,
+            LOCKED
+        }
+        #endregion
+
         #region Properties
         public string _Name { get; }
 
@@ -21,35 +30,46 @@ namespace UniProject.Models
             }
         }
 
-        private bool _isLocked;
-        public bool _IsLocked
+        private LockState _lockState;
+        public LockState _LockState
         {
-            get { return _isLocked; }
+            get { return _lockState; }
             set
             {
-                if (value == _isLocked)
+                if (value == _lockState)
                     return;
-                _isLocked = value;
-                if (_isLocked)
+                _lockState = value;
+                if (LockState.LOCKED == _lockState)
                 {
                     _Image = "baseline_lock_black_36.png";
                 }
-                else
+                else if(LockState.UNLOCKED == _lockState)
                 {
                     _Image = "baseline_lock_open_black_36.png";
+                }
+                else
+                {
+                    _Image = "";
                 }
                 // Must notify of change to state
                 OnPropertyChanged();
             }
 
         }
+
+        private LockState _commandedState;
+        public LockState _CommandedState { get; set; }
+
+        public Model_BleConnection _Connection;
+
         #endregion
 
         #region Constructor
-        public Model_Device(string name, bool initial)
+        public Model_Device(string name)
         {
             _Name = name;
-            _IsLocked = initial;
+            _lockState = LockState.UNKNOWN;
+            _CommandedState = _lockState;
         }
         #endregion
     }

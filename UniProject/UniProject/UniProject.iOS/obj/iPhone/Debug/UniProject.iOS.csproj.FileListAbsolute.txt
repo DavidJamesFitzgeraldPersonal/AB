@@ -64,6 +64,14 @@ C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject.iOS
 C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\UniProject.iOS.csproj.CopyComplete
 C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\UniProject.iOS.exe
 C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\UniProject.iOS.pdb
+C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
+C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
+C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
+C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\coremlc\_PartialAppManifest.items
+C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\coremlc\_BundleResourceWithLogicalName.items
+C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\optimized\
+C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\UniProject.iOS.csprojAssemblyReference.cache
+C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\UniProject.iOS.csproj.CoreCompileInputs.cache
 C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\bin\iPhone\Debug\UniProject.iOS.exe
 C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\bin\iPhone\Debug\UniProject.iOS.pdb
 C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\bin\iPhone\Debug\Plugin.BLE.Abstractions.dll
@@ -119,14 +127,6 @@ C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\bin\
 C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\bin\iPhone\Debug\zh-Hant\Xamarin.Forms.Platform.iOS.resources.dll
 C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\bin\iPhone\Debug\UniProject.dll
 C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\bin\iPhone\Debug\UniProject.pdb
-C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
-C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
-C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
-C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\coremlc\_PartialAppManifest.items
-C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\coremlc\_BundleResourceWithLogicalName.items
-C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\optimized\
-C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\UniProject.iOS.csprojAssemblyReference.cache
-C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\UniProject.iOS.csproj.CoreCompileInputs.cache
 C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\UniProject.iOS.csproj.CopyComplete
 C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\UniProject.iOS.exe
 C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject.iOS\obj\iPhone\Debug\UniProject.iOS.pdb

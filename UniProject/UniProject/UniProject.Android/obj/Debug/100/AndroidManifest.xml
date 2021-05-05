@@ -6,7 +6,7 @@
     the contents are regenerated.
     -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.uniproject" android:installLocation="preferExternal">
-  <uses-sdk android:minSdkVersion="20" android:targetSdkVersion="29" />
+  <uses-sdk android:minSdkVersion="20" android:targetSdkVersion="21" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.USE_FINGERPRINT" />
@@ -15,7 +15,7 @@
   <uses-permission android:name="android.permission.BLUETOOTH" />
   <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
   <uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
-  <application android:label="UniProject.Android" android:theme="@style/MainTheme" android:icon="@mipmap/launcher_foreground" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true" android:extractNativeLibs="true">
+  <application android:label="UniProject.Android" android:theme="@style/MainTheme" android:icon="@mipmap/launcher_foreground" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
     <activity android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@mipmap/icon" android:label="UniProject" android:theme="@style/MainTheme" android:name="crc64bab82e5eda3b98bf.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

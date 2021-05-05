@@ -3,10 +3,14 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Plugin.BLE;
+using Plugin.BLE.Abstractions.Exceptions;
+
 namespace UniProject.ViewModels
 {
     public class ViewModel_AddPage : BindableObject
     {
+        private Plugin.BLE.Abstractions.Contracts.IAdapter _bleHW;
+
         #region Properties
         private Models.Model_BleConnection _selectedDevice;
         public Models.Model_BleConnection _SelectedDevice
@@ -21,9 +25,6 @@ namespace UniProject.ViewModels
 
                 // Catch the change in item
                 DoDeviceSelected();
-
-                // Set to null to deselect the device
-                _selectedDevice = null;
             }
         }
 
@@ -36,6 +37,19 @@ namespace UniProject.ViewModels
                 if (value == _availableBleDevices)
                     return;
                 _availableBleDevices = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private ObservableCollection<Models.Model_BleConnection> _connectedBleDevices;
+        public ObservableCollection<Models.Model_BleConnection> _ConnectedBleDevices
+        {
+            get { return _connectedBleDevices; }
+            set
+            {
+                if (value == _connectedBleDevices)
+                    return;
+                _connectedBleDevices = value;
                 OnPropertyChanged();
             }
         }
@@ -78,17 +92,38 @@ namespace UniProject.ViewModels
 
         #region Commands
         public ICommand _DeviceSelected { get; }
-        private void DoDeviceSelected()
+        private async void DoDeviceSelected()
         {
-            // connect to device
-            if()
+            await _bleHW.StopScanningForDevicesAsync();
+
+            if (false == _bleHW.IsScanning)
+            {
+                // connect to device
+                try
+                {
+                    _bleHW.DeviceConnected += (sender, events) =>
+                    {
+                        _ConnectedBleDevices = new ObservableCollection<Models.Model_BleConnection>();
+                        _ConnectedBleDevices.Add(new Models.Model_BleConnection(events.Device));
+                    };
+                    await _bleHW.ConnectToDeviceAsync(_SelectedDevice._Dev);
+                }
+                catch(DeviceConnectionException ex)
+                {
+                    int i = 0;
+                }
+                catch (Exception e)
+                {
+                    // ... could not connect to device
+                    int i = 0;
+                }
+            }
         }
 
         public ICommand _ScanSelected { get; }
         private void DoScanSelected()
         {
-            _AllowScan = false;
-            _AvailableBleDevices.Clear();
+            _AvailableBleDevices = new ObservableCollection<Models.Model_BleConnection>();
             DoBLEScan();
         }
         #endregion
@@ -96,11 +131,11 @@ namespace UniProject.ViewModels
         #region Constructor
         public ViewModel_AddPage()
         {
-            _AvailableBleDevices = new ObservableCollection<Models.Model_BleConnection>();
-
             // Bind Commands
             _DeviceSelected = new Command(DoDeviceSelected);
             _ScanSelected = new Command(DoScanSelected);
+
+            _bleHW = CrossBluetoothLE.Current.Adapter;
 
             // Start a scan on creation for lulz
             DoScanSelected();
@@ -111,27 +146,29 @@ namespace UniProject.ViewModels
         {
             try
             {
-                Plugin.BLE.Abstractions.Contracts.IAdapter bleHW = CrossBluetoothLE.Current.Adapter;
+                var systemDevices = _bleHW.GetSystemConnectedOrPairedDevices();
 
-                if (false == bleHW.IsScanning)
+                if (false == _bleHW.IsScanning)
                 {
-                    bleHW.ScanMode = Plugin.BLE.Abstractions.Contracts.ScanMode.LowLatency;
-                    bleHW.ScanTimeout = 5000;
-                    bleHW.DeviceDiscovered += (sender, events) =>
+                    _AllowScan = false;
+
+                    _bleHW.ScanMode = Plugin.BLE.Abstractions.Contracts.ScanMode.LowLatency;
+                    _bleHW.ScanTimeout = 5000;
+                    _bleHW.DeviceDiscovered += (sender, events) =>
                     {
-                        _AvailableBleDevices.Add(new Models.Model_BleConnection
-                                                (events.Device.Id.ToString(),
-                                                events.Device.Name,
-                                                events.Device));   
+                        if ("SH-HC-08" == events.Device.Name)
+                        {
+                            _AvailableBleDevices.Add(new Models.Model_BleConnection(events.Device));
+                        }
                     };
-                    bleHW.ScanTimeoutElapsed += (sender, events) =>
+                    _bleHW.ScanTimeoutElapsed += (sender, events) =>
                     {
                         _AllowScan = true;
-                        bleHW.StopScanningForDevicesAsync();
+                        _bleHW.StopScanningForDevicesAsync();
                     };
 
                     _AllowScan = false;
-                    await bleHW.StartScanningForDevicesAsync();
+                    await _bleHW.StartScanningForDevicesAsync();
                 }
             }
             catch (Exception ex)

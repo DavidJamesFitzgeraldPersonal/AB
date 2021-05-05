@@ -37,7 +37,7 @@ namespace UniProject.ViewModels
         #region Events
         private static void BleHW_DeviceDiscovered(object sender, Plugin.BLE.Abstractions.EventArgs.DeviceEventArgs e)
         {
-            Models.Model_BleConnection newDevice = new Models.Model_BleConnection(e.Device.Id.ToString(), e.Device.Name, e.Device);
+            Models.Model_BleConnection newDevice = new Models.Model_BleConnection(e.Device);
             _BleDevices.Add(newDevice);
         }
         #endregion

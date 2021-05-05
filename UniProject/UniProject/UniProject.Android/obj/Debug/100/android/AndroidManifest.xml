@@ -6,7 +6,7 @@
     the contents are regenerated.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.companyname.uniproject" android:installLocation="preferExternal" android:versionCode="1" android:versionName="1.0">
-  <uses-sdk android:minSdkVersion="20" android:targetSdkVersion="29" />
+  <uses-sdk android:minSdkVersion="20" android:targetSdkVersion="21" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.USE_FINGERPRINT" />
@@ -16,7 +16,7 @@
   <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
   <uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
   <uses-permission android:name="android.permission.USE_BIOMETRIC" />
-  <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/launcher_foreground" android:label="UniProject.Android" android:theme="@style/MainTheme">
+  <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:icon="@mipmap/launcher_foreground" android:label="UniProject.Android" android:theme="@style/MainTheme">
     <activity android:name="crc64bab82e5eda3b98bf.MainActivity" android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@mipmap/icon" android:label="UniProject" android:theme="@style/MainTheme">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
