@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UniProject.ControlPage"
+             BackgroundColor="#FFf9f9f9">
+    
+    <StackLayout VerticalOptions="Center"            
+                     Margin="20">
+
+        <Label Text="{Binding Path=_InfoString}"
+               HorizontalOptions="CenterAndExpand"
+               FontSize ="Large"
+               TextColor="black"/>
+
+        <ListView ItemsSource="{Binding Path=_Devices}"
+                    SelectedItem="{Binding Path=_SelectedDevice, Mode=TwoWay}"
+                    HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="{Binding Path=_Image}"/>
+                            <Label Grid.Column="1" Text="{Binding Path=_Name}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

@@ -4,10 +4,6 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using Plugin.BLE;
 using Plugin.BLE.Abstractions.Exceptions;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-
 namespace UniProject.ViewModels
 {
     public class ViewModel_ControlPage : BindableObject
@@ -57,6 +53,19 @@ namespace UniProject.ViewModels
                 if (value == _scanningString)
                     return;
                 _scanningString = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _infoString = "";
+        public string _InfoString
+        {
+            get { return _infoString; }
+            set
+            {
+                if (value == _infoString)
+                    return;
+                _infoString = value;
                 OnPropertyChanged();
             }
         }
@@ -112,6 +121,7 @@ namespace UniProject.ViewModels
             _bleHW = CrossBluetoothLE.Current.Adapter;
             _bleHW.ScanMode = Plugin.BLE.Abstractions.Contracts.ScanMode.LowLatency;
             _bleHW.ScanTimeout = 100;
+            #region Callbacks
             _bleHW.DeviceDiscovered += (sender, events) =>
             {
                 DoDeviceFound(events.Device);
@@ -144,13 +154,27 @@ namespace UniProject.ViewModels
                     }
                 }
             };
+            #endregion
             _backgroundTimer.Elapsed += _backgroundTimer_Elapsed;
             DoBLEScan();
         }
         #endregion
 
+        #region BLE Methods
         private void DoBLEScan()
         {
+            try
+            {
+                byte[] key;
+                byte[] cipher = Models.Model_AES.AES_Encrypt("123456", out key);
+                byte[] message = Models.Model_AES.AES_Decrypt(cipher, key);
+                string plain = System.Text.Encoding.ASCII.GetString(message);
+                int i = 0;
+            }
+            catch(Exception ex)
+            {
+                int i = 0;
+            }
             if (false == _bleHW.IsScanning)
             {
                 try
@@ -160,7 +184,7 @@ namespace UniProject.ViewModels
                 }
                 catch (Exception ex)
                 {
-                    int i = 0;
+                    MessagingCenter.Send(this, "Exception", ex.Message);
                 }
             }
         }
@@ -172,11 +196,19 @@ namespace UniProject.ViewModels
                 _ScanningString = "";
                 
                 int k = _Devices.Count;
-                for (int i = 0; i < k; i++)
+                if (0 == k)
                 {
-                    if (_Devices[i]._Connection._Old && _Devices[i] != null)
+                    _InfoString = "No devices found. Continuing background scan.";
+                }
+                else
+                {
+                    _InfoString = "";
+                    for (int i = 0; i < k; i++)
                     {
-                        _Devices.RemoveAt(i);
+                        if (_Devices[i]._Connection._Old && _Devices[i] != null)
+                        {
+                            _Devices.RemoveAt(i);
+                        }
                     }
                 }
 
@@ -206,12 +238,11 @@ namespace UniProject.ViewModels
                     }
                     catch (DeviceConnectionException ex)
                     {
-                        int i = 0;
+                        MessagingCenter.Send(this, "Exception", ex.Message);
                     }
                     catch (Exception e)
                     {
-                        // ... could not connect to device
-                        int i = 0;
+                        MessagingCenter.Send(this, "Exception", e.Message);
                     }
                 }
             }
@@ -236,7 +267,7 @@ namespace UniProject.ViewModels
             {
                 try
                 {
-                    if (thisDev._LockState != thisDev._CommandedState)
+                    if (thisDev._LockState != thisDev._CommandedState && thisDev._CommandedState != Models.Model_Device.LockState.NONE)
                     {
                         byte[] Data = new byte[1];
                         switch (thisDev._CommandedState)
@@ -254,17 +285,21 @@ namespace UniProject.ViewModels
                         }
                         DoWriteState(thisDev, Data);
                     }
+                    else
+                    {
+                        // Ensure we dont continually set the lock state
+                        thisDev._CommandedState = Models.Model_Device.LockState.NONE;
+                    }
 
                     DoReadState(thisDev);
                 }
                 catch (DeviceConnectionException ex)
                 {
-                    int i = 0;
+                    MessagingCenter.Send(this, "Exception", ex.Message);
                 }
                 catch (Exception e)
                 {
-                    // ... could not connect to device
-                    int i = 0;
+                    MessagingCenter.Send(this, "Exception", e.Message);
                 }
             }
         }
@@ -300,12 +335,11 @@ namespace UniProject.ViewModels
                 }
                 catch (DeviceConnectionException ex)
                 {
-                    int i = 0;
+                    MessagingCenter.Send(this, "Exception", ex.Message);
                 }
                 catch (Exception e)
                 {
-                    // ... could not connect to device
-                    int i = 0;
+                    MessagingCenter.Send(this, "Exception", e.Message);
                 }
             }
         }
@@ -321,14 +355,14 @@ namespace UniProject.ViewModels
                 }
                 catch (DeviceConnectionException ex)
                 {
-                    int i = 0;
+                    MessagingCenter.Send(this, "Exception", ex.Message);
                 }
                 catch (Exception e)
                 {
-                    // ... could not connect to device
-                    int i = 0;
+                    MessagingCenter.Send(this, "Exception", e.Message);
                 }
             }
         }
+        #endregion
     }
 }

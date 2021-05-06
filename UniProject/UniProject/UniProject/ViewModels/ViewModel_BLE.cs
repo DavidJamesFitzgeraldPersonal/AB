@@ -1,6 +1,5 @@
 ﻿using Plugin.BLE;
 using System.Collections.Generic;
-
 namespace UniProject.ViewModels
 {
     public static class ViewModel_BLE

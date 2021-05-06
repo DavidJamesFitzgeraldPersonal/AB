@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
-
 namespace UniProject.ViewModels
 {
     // The following dangerous permissions are required, which must be specifically checked for at run time.

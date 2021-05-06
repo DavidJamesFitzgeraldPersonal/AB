@@ -2,7 +2,6 @@
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
 using Xamarin.Forms;
-
 namespace UniProject.ViewModels
 {
     public static class VM_UserAuthentication

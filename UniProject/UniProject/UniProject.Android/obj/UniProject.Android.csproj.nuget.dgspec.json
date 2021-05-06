@@ -42,6 +42,10 @@
       "frameworks": {
         "monoandroid11.0": {
           "dependencies": {
+            "PCLCrypto": {
+              "target": "Package",
+              "version": "[2.1.40-alpha, )"
+            },
             "Plugin.BLE": {
               "target": "Package",
               "version": "[2.1.1, )"
@@ -107,6 +111,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "PCLCrypto": {
+              "target": "Package",
+              "version": "[2.1.40-alpha, )"
             },
             "Plugin.BLE": {
               "target": "Package",

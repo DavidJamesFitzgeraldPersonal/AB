@@ -1,4 +1,5 @@
 FormsViewGroup.dll
+PCLCrypto.dll
 Plugin.BLE.dll
 Plugin.Fingerprint.dll
 Plugin.Permissions.dll

@@ -4,6 +4,12 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "UniProject.Android.dll" comes first in this list. */
 		"UniProject.Android.dll",
 		"FormsViewGroup.dll",
+		"Microsoft.VisualStudio.Validation.dll",
+		"PCLCrypto.dll",
+		"PInvoke.BCrypt.dll",
+		"PInvoke.Kernel32.dll",
+		"PInvoke.NCrypt.dll",
+		"PInvoke.Windows.Core.dll",
 		"Plugin.BLE.Abstractions.dll",
 		"Plugin.BLE.dll",
 		"Plugin.Fingerprint.dll",

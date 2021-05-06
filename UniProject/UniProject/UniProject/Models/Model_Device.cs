@@ -9,7 +9,8 @@ namespace UniProject.Models
         {
             UNKNOWN,
             UNLOCKED,
-            LOCKED
+            LOCKED,
+            NONE,
         }
         #endregion
 
@@ -49,7 +50,7 @@ namespace UniProject.Models
                 }
                 else
                 {
-                    _Image = "";
+                    _Image = "baseline_help_center_black_36.png";
                 }
                 // Must notify of change to state
                 OnPropertyChanged();
@@ -57,7 +58,7 @@ namespace UniProject.Models
 
         }
 
-        private LockState _commandedState;
+        private LockState _commandedState = LockState.NONE;
         public LockState _CommandedState { get; set; }
 
         public Model_BleConnection _Connection;

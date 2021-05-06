@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:local="clr-namespace:UniProject"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="UniProject.HomePage"
+            BackgroundColor="#FFf9f9f9"
+            NavigationPage.HasBackButton="False">
+
+    <local:ControlPage Icon="outline_sensor_door_black_24.png"/>
+</TabbedPage>
