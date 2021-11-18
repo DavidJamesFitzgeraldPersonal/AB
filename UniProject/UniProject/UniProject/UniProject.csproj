@@ -28,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Mono.Cecil" Version="0.10.3" />
     <PackageReference Include="PCLCrypto" Version="2.1.40-alpha" />
     <PackageReference Include="Plugin.BLE" Version="2.1.1" />
     <PackageReference Include="Plugin.Fingerprint" Version="2.1.4" />

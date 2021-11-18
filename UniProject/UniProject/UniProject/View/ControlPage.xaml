@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="UniProject.ControlPage"
-             BackgroundColor="#FFf9f9f9">
+             BackgroundColor="{StaticResource blueColor}">
     
     <StackLayout VerticalOptions="Center"            
                      Margin="20">
@@ -10,7 +10,7 @@
         <Label Text="{Binding Path=_InfoString}"
                HorizontalOptions="CenterAndExpand"
                FontSize ="Large"
-               TextColor="black"/>
+               TextColor="White"/>
 
         <ListView ItemsSource="{Binding Path=_Devices}"
                     SelectedItem="{Binding Path=_SelectedDevice, Mode=TwoWay}"
@@ -19,15 +19,23 @@
                 <DataTemplate>
                     <ViewCell>
                         <Grid>
+                            
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="100"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="{Binding Path=_Image}"/>
-                            <Label Grid.Column="1" Text="{Binding Path=_Name}"/>
+                            
+                            <Label BackgroundColor="red" 
+                                   TextColor="white"
+                                   FontSize="30"
+                                   Grid.Column="0" 
+                                   Text="{Binding Path=_Name}"/>
+                            
+                            <Image BackgroundColor="red" 
+                                   Grid.Column="1" 
+                                   Source="{Binding Path=_Image}"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

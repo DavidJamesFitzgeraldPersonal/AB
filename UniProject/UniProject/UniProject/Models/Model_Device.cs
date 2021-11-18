@@ -5,11 +5,11 @@ namespace UniProject.Models
     public class Model_Device : BindableObject
     {
         #region Enums
-        public enum LockState
+        public enum DataSource
         {
             UNKNOWN,
-            UNLOCKED,
-            LOCKED,
+            FAKE,
+            REAL,
             NONE,
         }
         #endregion
@@ -31,20 +31,26 @@ namespace UniProject.Models
             }
         }
 
-        private LockState _lockState;
-        public LockState _LockState
+        private byte[] _dataToSend;
+        public byte[] _DataToSend;
+
+        private byte[] _response;
+        public byte[] _Response;
+
+        private DataSource _dataSource;
+        public DataSource _DataSource
         {
-            get { return _lockState; }
+            get { return _dataSource; }
             set
             {
-                if (value == _lockState)
+                if (value == _dataSource)
                     return;
-                _lockState = value;
-                if (LockState.LOCKED == _lockState)
+                _dataSource = value;
+                if (DataSource.FAKE == _dataSource)
                 {
                     _Image = "baseline_lock_black_36.png";
                 }
-                else if(LockState.UNLOCKED == _lockState)
+                else if(DataSource.REAL == _dataSource)
                 {
                     _Image = "baseline_lock_open_black_36.png";
                 }
@@ -58,8 +64,8 @@ namespace UniProject.Models
 
         }
 
-        private LockState _commandedState = LockState.NONE;
-        public LockState _CommandedState { get; set; }
+        private DataSource _commandedState = DataSource.NONE;
+        public DataSource _CommandedState { get; set; }
 
         public Model_BleConnection _Connection;
 
@@ -69,8 +75,12 @@ namespace UniProject.Models
         public Model_Device(string name)
         {
             _Name = name;
-            _lockState = LockState.UNKNOWN;
-            _CommandedState = _lockState;
+            _dataSource = DataSource.UNKNOWN;
+            _image = "baseline_help_center_black_36.png";
+            _CommandedState = _dataSource;
+
+            _DataSource = _dataSource;
+            _Image = _image;
         }
         #endregion
     }

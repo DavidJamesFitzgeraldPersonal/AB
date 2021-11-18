@@ -28,21 +28,6 @@ C:\Users\Fitzgerald.David\Downloads\UniProject\UniProject\UniProject\obj\Debug\n
 C:\Users\Fitzgerald.David\Downloads\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.dll
 C:\Users\Fitzgerald.David\Downloads\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\ref\UniProject.dll
 C:\Users\Fitzgerald.David\Downloads\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.pdb
-C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\bin\Debug\netstandard2.0\UniProject.deps.json
-C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\bin\Debug\netstandard2.0\UniProject.dll
-C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\bin\Debug\netstandard2.0\ref\UniProject.dll
-C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\bin\Debug\netstandard2.0\UniProject.pdb
-C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\Views\App.xaml.g.cs
-C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\Views\ControlPage.xaml.g.cs
-C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
-C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.AssemblyInfoInputs.cache
-C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.AssemblyInfo.cs
-C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.csproj.CoreCompileInputs.cache
-C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\XamlC.stamp
-C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.dll
-C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\ref\UniProject.dll
-C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.pdb
-C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.csprojAssemblyReference.cache
 C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\View\App.xaml.g.cs
 C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\View\ControlPage.xaml.g.cs
 C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\View\HomePage.xaml.g.cs
@@ -62,3 +47,19 @@ C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject\obj\Debu
 C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.dll
 C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\ref\UniProject.dll
 C:\Users\Fitzgerald.David\Documents\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.pdb
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\bin\Debug\netstandard2.0\UniProject.deps.json
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\bin\Debug\netstandard2.0\UniProject.dll
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\bin\Debug\netstandard2.0\ref\UniProject.dll
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\bin\Debug\netstandard2.0\UniProject.pdb
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\View\App.xaml.g.cs
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\View\ControlPage.xaml.g.cs
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\View\HomePage.xaml.g.cs
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\View\MainPage.xaml.g.cs
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.AssemblyInfoInputs.cache
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.AssemblyInfo.cs
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.csproj.CoreCompileInputs.cache
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.dll
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\ref\UniProject.dll
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.pdb
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\UniProject.csproj.AssemblyReference.cache

@@ -2,15 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="UniProject.MainPage"
-             BackgroundColor="#FFf9f9f9">
+             BackgroundColor="{StaticResource blueColor}">
 
     <StackLayout VerticalOptions="Center"
                  Margin="20">
 
-        <Label Text="The Title" HorizontalOptions="CenterAndExpand" FontSize="Header" TextColor="{StaticResource blueColor}"/>
-
-        <Image Source="Splash.png" Margin="60,10,10,10"/>
+        <Image Source="Splash.png" Margin="2,2,2,2"/>
         
+        <Label Text="PED GEN2 debug app" HorizontalOptions="CenterAndExpand" FontSize="32" TextColor="White"/>
+
         <Button Text="Log in"
                 Command="{Binding Path=_LoginClicked}"
                 Style="{StaticResource normalButton}"/>

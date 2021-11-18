@@ -13,23 +13,8 @@ namespace UniProject.ViewModels
             Plugin.BLE.Abstractions.Contracts.IAdapter bleHW = CrossBluetoothLE.Current.Adapter;
 
             bleHW.ScanMode = Plugin.BLE.Abstractions.Contracts.ScanMode.LowLatency;
-            bleHW.ScanTimeout = 5000;
+            bleHW.ScanTimeout = 2500;
             bleHW.DeviceDiscovered += BleHW_DeviceDiscovered;
-            /*
-            ble.StateChanged += (s, e) =>
-            {
-                i++;
-                this.display.Text = "The bluetooth state changed, iteration  " + i;
-                Debug.WriteLine($"The bluetooth state changed to {e.NewState}");
-            };
-            */
-
-            /*
-            adapter.DeviceAdvertised += (s, a) =>
-            {
-                Debug.WriteLine("Device advertised: " + a.Device);
-            };
-            */
             await bleHW.StartScanningForDevicesAsync();
         }
 

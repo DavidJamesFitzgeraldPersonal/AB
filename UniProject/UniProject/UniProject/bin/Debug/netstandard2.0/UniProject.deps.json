@@ -9,14 +9,14 @@
     ".NETStandard,Version=v2.0/": {
       "UniProject/1.0.0": {
         "dependencies": {
+          "Mono.Cecil": "0.10.3",
           "NETStandard.Library": "2.0.3",
           "PCLCrypto": "2.1.40-alpha",
           "Plugin.BLE": "2.1.1",
           "Plugin.Fingerprint": "2.1.4",
           "Plugin.Permissions": "6.0.1",
           "Xamarin.Essentials": "1.6.1",
-          "Xamarin.Forms": "5.0.0.2012",
-          "Mono.Android": "0.0.0.0"
+          "Xamarin.Forms": "5.0.0.2012"
         },
         "runtime": {
           "UniProject.dll": {}
@@ -70,6 +70,36 @@
           },
           "lib/netstandard2.0/zh-Hant/Microsoft.VisualStudio.Validation.resources.dll": {
             "locale": "zh-Hant"
+          }
+        }
+      },
+      "Mono.Cecil/0.10.3": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.IO.FileSystem": "4.0.1",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Reflection": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Security.Cryptography.Algorithms": "4.3.0",
+          "System.Security.Cryptography.Csp": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Mono.Cecil.Mdb.dll": {
+            "assemblyVersion": "0.10.3.0",
+            "fileVersion": "0.10.3.0"
+          },
+          "lib/netstandard1.3/Mono.Cecil.Pdb.dll": {
+            "assemblyVersion": "0.10.3.0",
+            "fileVersion": "0.10.3.0"
+          },
+          "lib/netstandard1.3/Mono.Cecil.Rocks.dll": {
+            "assemblyVersion": "0.10.3.0",
+            "fileVersion": "0.10.3.0"
+          },
+          "lib/netstandard1.3/Mono.Cecil.dll": {
+            "assemblyVersion": "0.10.3.0",
+            "fileVersion": "0.10.3.0"
           }
         }
       },
@@ -268,6 +298,29 @@
           "System.Runtime": "4.3.0",
           "System.Text.Encoding": "4.3.0",
           "System.Threading.Tasks": "4.3.0"
+        }
+      },
+      "System.IO.FileSystem/4.0.1": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.IO": "4.3.0",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Handles": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        }
+      },
+      "System.IO.FileSystem.Primitives/4.0.1": {
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.IO.FileSystem.Primitives.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "1.0.24212.1"
+          }
         }
       },
       "System.Linq/4.3.0": {
@@ -511,14 +564,6 @@
             "fileVersion": "5.0.0.671"
           }
         }
-      },
-      "Mono.Android/0.0.0.0": {
-        "runtime": {
-          "Mono.Android.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
       }
     }
   },
@@ -548,6 +593,13 @@
       "sha512": "sha512-AOmvJTT4CpamJ2A6J+PBrhKPfs2HXi/MJVxN/QlViewjI4XZDrt/yp3NMto+OOgB25jDnt9IIdNTkjpNBUpXmw==",
       "path": "microsoft.visualstudio.validation/15.5.31",
       "hashPath": "microsoft.visualstudio.validation.15.5.31.nupkg.sha512"
+    },
+    "Mono.Cecil/0.10.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sE0q+bj5YC3X9FuFCXv0R0suoldVGXiuUls8mtXuBwDw1LeQ39pOKFyrDiEkoxCh4tNHH/luNB6DgZZnMZlEeA==",
+      "path": "mono.cecil/0.10.3",
+      "hashPath": "mono.cecil.0.10.3.nupkg.sha512"
     },
     "NETStandard.Library/2.0.3": {
       "type": "package",
@@ -752,6 +804,20 @@
       "path": "system.io/4.3.0",
       "hashPath": "system.io.4.3.0.nupkg.sha512"
     },
+    "System.IO.FileSystem/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IBErlVq5jOggAD69bg1t0pJcHaDbJbWNUZTPI96fkYWzwYbN6D9wRHMULLDd9dHsl7C2YsxXL31LMfPI1SWt8w==",
+      "path": "system.io.filesystem/4.0.1",
+      "hashPath": "system.io.filesystem.4.0.1.nupkg.sha512"
+    },
+    "System.IO.FileSystem.Primitives/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kWkKD203JJKxJeE74p8aF8y4Qc9r9WQx4C0cHzHPrY3fv/L/IhWnyCHaFJ3H1QPOH6A93whlQ2vG5nHlBDvzWQ==",
+      "path": "system.io.filesystem.primitives/4.0.1",
+      "hashPath": "system.io.filesystem.primitives.4.0.1.nupkg.sha512"
+    },
     "System.Linq/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -905,11 +971,6 @@
       "sha512": "sha512-Rqc6xvWR/sf+Db5+qRCFmuYTWVp04QWRfwPto2/JHbShSy4Ed53Q2jpoFzsoloXkJA6saD236PlaWAhT6vI4gw==",
       "path": "xamarin.forms/5.0.0.2012",
       "hashPath": "xamarin.forms.5.0.0.2012.nupkg.sha512"
-    },
-    "Mono.Android/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

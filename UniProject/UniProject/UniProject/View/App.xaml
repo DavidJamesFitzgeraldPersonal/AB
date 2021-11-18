@@ -4,12 +4,12 @@
              x:Class="UniProject.App">
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="blueColor">#1E90FF</Color>
+            <Color x:Key="blueColor">#1E3D90</Color>
             <Color x:Key="whiteColor">#FFFFFF</Color>
 
             <Style x:Key="normalButton"  TargetType="Button">
-                <Setter Property="BackgroundColor" Value="{StaticResource blueColor}"/>
-                <Setter Property="TextColor" Value="{StaticResource whiteColor}"/>
+                <Setter Property="TextColor" Value="{StaticResource blueColor}"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource whiteColor}"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

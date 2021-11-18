@@ -9,7 +9,7 @@ namespace UniProject.ViewModels
     public class ViewModel_ControlPage : BindableObject
     {
         #region Privates
-        private static System.Timers.Timer _backgroundTimer = new System.Timers.Timer(200);
+        private static System.Timers.Timer _backgroundTimer = new System.Timers.Timer(2000);
 
         private static Plugin.BLE.Abstractions.Contracts.IAdapter _bleHW;
         #endregion
@@ -44,19 +44,6 @@ namespace UniProject.ViewModels
             }
         }
 
-        private string _scanningString = "";
-        public string _ScanningString
-        {
-            get { return _scanningString; }
-            set
-            {
-                if (value == _scanningString)
-                    return;
-                _scanningString = value;
-                OnPropertyChanged();
-            }
-        }
-
         private string _infoString = "";
         public string _InfoString
         {
@@ -79,17 +66,17 @@ namespace UniProject.ViewModels
             {
                 try
                 {
-                    if (Models.Model_Device.LockState.LOCKED == _SelectedDevice._LockState)
+                    if (Models.Model_Device.DataSource.FAKE == _SelectedDevice._DataSource)
                     {
-                        _SelectedDevice._CommandedState = Models.Model_Device.LockState.UNLOCKED;
+                        _SelectedDevice._CommandedState = Models.Model_Device.DataSource.REAL;
                     }
-                    if (Models.Model_Device.LockState.UNLOCKED == _SelectedDevice._LockState)
+                    if (Models.Model_Device.DataSource.REAL == _SelectedDevice._DataSource)
                     {
-                        _SelectedDevice._CommandedState = Models.Model_Device.LockState.LOCKED;
+                        _SelectedDevice._CommandedState = Models.Model_Device.DataSource.FAKE;
                     }
-                    if (Models.Model_Device.LockState.UNKNOWN == _SelectedDevice._LockState)
+                    if (Models.Model_Device.DataSource.UNKNOWN == _SelectedDevice._DataSource)
                     {
-                        _SelectedDevice._CommandedState = Models.Model_Device.LockState.LOCKED;
+                        _SelectedDevice._CommandedState = Models.Model_Device.DataSource.REAL;
                     }
                     _SelectedDevice = null;
                 }
@@ -120,7 +107,8 @@ namespace UniProject.ViewModels
 
             _bleHW = CrossBluetoothLE.Current.Adapter;
             _bleHW.ScanMode = Plugin.BLE.Abstractions.Contracts.ScanMode.LowLatency;
-            _bleHW.ScanTimeout = 100;
+            _bleHW.ScanTimeout = 1000;
+
             #region Callbacks
             _bleHW.DeviceDiscovered += (sender, events) =>
             {
@@ -155,6 +143,10 @@ namespace UniProject.ViewModels
                 }
             };
             #endregion
+
+            //DEBUG
+            Models.Model_Device model = new Models.Model_Device("debug");
+         //   _Devices.Add(model);
             _backgroundTimer.Elapsed += _backgroundTimer_Elapsed;
             DoBLEScan();
         }
@@ -163,6 +155,7 @@ namespace UniProject.ViewModels
         #region BLE Methods
         private void DoBLEScan()
         {
+            /*
             try
             {
                 byte[] key;
@@ -175,17 +168,19 @@ namespace UniProject.ViewModels
             {
                 int i = 0;
             }
+            */
             if (false == _bleHW.IsScanning)
             {
                 try
                 {
-                    _ScanningString = "Scanning...";
+                    _InfoString = "Scanning.";
                     _bleHW.StartScanningForDevicesAsync();
                 }
                 catch (Exception ex)
                 {
                     MessagingCenter.Send(this, "Exception", ex.Message);
                 }
+                _backgroundTimer.Start();
             }
         }
         private void DoScanTimeout()
@@ -193,16 +188,18 @@ namespace UniProject.ViewModels
             if (false == _bleHW.IsScanning)
             {
                 _bleHW.StopScanningForDevicesAsync();
-                _ScanningString = "";
+
+                _InfoString = "";
                 
                 int k = _Devices.Count;
                 if (0 == k)
                 {
-                    _InfoString = "No devices found. Continuing background scan.";
+                    _InfoString = "No devices found.";
                 }
                 else
                 {
-                    _InfoString = "";
+                    /*
+                    _InfoString = "Devices found. Cleaning list.";
                     for (int i = 0; i < k; i++)
                     {
                         if (_Devices[i]._Connection._Old && _Devices[i] != null)
@@ -210,47 +207,52 @@ namespace UniProject.ViewModels
                             _Devices.RemoveAt(i);
                         }
                     }
+                    */
+                    _InfoString = "Updating Devices.";
+                    DoStateUpdates();
+                    _InfoString = "";
                 }
-
-                DoStateUpdates();
             }
         }
-        private void DoDeviceFound(Plugin.BLE.Abstractions.Contracts.IDevice founddDev)
+        private void DoDeviceFound(Plugin.BLE.Abstractions.Contracts.IDevice foundDev)
         {
-            if ("SH-HC-08" == founddDev.Name)
+            if (foundDev.Name != null)
             {
-                bool found = false;
-
-                foreach (Models.Model_Device existingDev in _devices)
+                if (foundDev.Name.Contains("Tracerco-PED") && foundDev.Name != "")
                 {
-                    if (founddDev.Id == existingDev._Connection._Dev.Id)
-                    {
-                        found = true;
-                        break;
-                    }
-                }
+                    bool found = false;
 
-                if (false == found)
-                {
-                    try
+                    foreach (Models.Model_Device existingDev in _devices)
                     {
-                        _bleHW.ConnectToDeviceAsync(founddDev);
+                        if (foundDev.Id == existingDev._Connection._Dev.Id)
+                        {
+                            found = true;
+                            break;
+                        }
                     }
-                    catch (DeviceConnectionException ex)
+
+                    if (false == found)
                     {
-                        MessagingCenter.Send(this, "Exception", ex.Message);
-                    }
-                    catch (Exception e)
-                    {
-                        MessagingCenter.Send(this, "Exception", e.Message);
+                        try
+                        {
+                            _bleHW.ConnectToDeviceAsync(foundDev);
+                        }
+                        catch (DeviceConnectionException ex)
+                        {
+                            MessagingCenter.Send(this, "Exception", ex.Message);
+                        }
+                        catch (Exception e)
+                        {
+                            MessagingCenter.Send(this, "Exception", e.Message);
+                        }
                     }
                 }
             }
         }
-        private void DoDeviceConnected(Plugin.BLE.Abstractions.Contracts.IDevice founddDev)
+        private async void DoDeviceConnected(Plugin.BLE.Abstractions.Contracts.IDevice foundDev)
         {
-            Models.Model_Device Dev = new Models.Model_Device(founddDev.Name);
-            Dev._Connection = new Models.Model_BleConnection(founddDev);
+            Models.Model_Device Dev = new Models.Model_Device(foundDev.Name);
+            Dev._Connection = new Models.Model_BleConnection(foundDev);
             _Devices.Add(Dev);
         }
         private void DoStateUpdates()
@@ -259,7 +261,6 @@ namespace UniProject.ViewModels
             {
                 DoUpdate(existingDev);
             }
-            _backgroundTimer.Start();
         }
         private void DoUpdate(Models.Model_Device thisDev)
         {
@@ -267,31 +268,53 @@ namespace UniProject.ViewModels
             {
                 try
                 {
-                    if (thisDev._LockState != thisDev._CommandedState && thisDev._CommandedState != Models.Model_Device.LockState.NONE)
+                    if (thisDev._DataSource != thisDev._CommandedState && thisDev._CommandedState != Models.Model_Device.DataSource.NONE)
                     {
-                        byte[] Data = new byte[1];
+                        byte[] Data;
                         switch (thisDev._CommandedState)
                         {
-                            case Models.Model_Device.LockState.LOCKED:
-                                Data[0] = 0x31;
+                            case Models.Model_Device.DataSource.FAKE:
+                                // Send command for 1sv/h
+                                Data = new byte[12];
+                                Data[0] = 0x55;
+                                Data[1] = 0x55;
+                                Data[2] = 0xDF;
+                                Data[3] = 0x00;
+                                Data[4] = 0x01;
+                                Data[5] = 0x05;
+                                Data[6] = 0x05;
+                                Data[7] = 0xF5;
+                                Data[8] = 0xE1;
+                                Data[9] = 0x00;
+                                Data[10] = 0x45;
+                                Data[11] = 0x04;
                                 break;
-                            case Models.Model_Device.LockState.UNLOCKED:
-                                Data[0] = 0x30;
-                                break;
+
+                            case Models.Model_Device.DataSource.REAL:
                             default:
-                                // Lock for safety
-                                Data[0] = 0x31;
+                                // Send command to remove debug mode
+                                Data = new byte[11];
+                                Data[0] = 0x55;
+                                Data[1] = 0x55;
+                                Data[2] = 0xDF;
+                                Data[3] = 0x00;
+                                Data[4] = 0x00;
+                                Data[5] = 0x00;
+                                Data[6] = 0x00;
+                                Data[7] = 0x00;
+                                Data[8] = 0x00;
+                                Data[9] = 0x21;
+                                Data[10] = 0x04;
                                 break;
                         }
-                        DoWriteState(thisDev, Data);
+                        thisDev._DataToSend = Data;
+                        DoDataTransfer(thisDev);
                     }
                     else
                     {
                         // Ensure we dont continually set the lock state
-                        thisDev._CommandedState = Models.Model_Device.LockState.NONE;
-                    }
-
-                    DoReadState(thisDev);
+                        thisDev._CommandedState = Models.Model_Device.DataSource.NONE;
+                    }                    
                 }
                 catch (DeviceConnectionException ex)
                 {
@@ -303,63 +326,32 @@ namespace UniProject.ViewModels
                 }
             }
         }
-        private async void DoReadState(Models.Model_Device connectedDev)
-        {
-            if (false == _bleHW.IsScanning)
-            {
-                try
-                {
-                    var service = await connectedDev._Connection._Dev.GetServiceAsync(Guid.Parse("0000FFE0-0000-1000-8000-00805F9B34FB"));
-                    var characteristic = await service.GetCharacteristicAsync(Guid.Parse("0000FFE1-0000-1000-8000-00805F9B34FB"));
-                    var bytes = await characteristic.ReadAsync();
 
-                    if (bytes.Length > 1)
-                    {
-                        connectedDev._LockState = Models.Model_Device.LockState.UNKNOWN;
-                    }
-                    else
-                    {
-                        if (bytes[0] == 0x30)
-                        {
-                            connectedDev._LockState = Models.Model_Device.LockState.UNLOCKED;
-                        }
-                        else if (bytes[0] == 0x31)
-                        {
-                            connectedDev._LockState = Models.Model_Device.LockState.LOCKED;
-                        }
-                        else
-                        {
-                            connectedDev._LockState = Models.Model_Device.LockState.UNKNOWN;
-                        }
-                    }
-                }
-                catch (DeviceConnectionException ex)
-                {
-                    MessagingCenter.Send(this, "Exception", ex.Message);
-                }
-                catch (Exception e)
-                {
-                    MessagingCenter.Send(this, "Exception", e.Message);
-                }
-            }
-        }
-        private async void DoWriteState(Models.Model_Device connectedDev, byte[] data)
+        private async void DoDataTransfer(Models.Model_Device connectedDev)
         {
             if (false == _bleHW.IsScanning)
             {
+                /*
+                 * Proprietary Service UUID: 49535343-FE7D-4AE5-8FA9-9FAFD205E455
+                 * UART TX UUID: 49535343-1E4D-4BD9-BA61-23C647249616 notify write write-no-response
+                 * UART RX UUID: 49535343-8841-43F4-A8D4-ECBE34729BB3 write write with-no-response
+                 */
                 try
                 {
-                    var service = await connectedDev._Connection._Dev.GetServiceAsync(Guid.Parse("0000FFE0-0000-1000-8000-00805F9B34FB"));
-                    var characteristic = await service.GetCharacteristicAsync(Guid.Parse("0000FFE1-0000-1000-8000-00805F9B34FB"));
-                    var bytes = await characteristic.WriteAsync(data);
+                    var service = await connectedDev._Connection._Dev.GetServiceAsync(Guid.Parse("49535343-FE7D-4AE5-8FA9-9FAFD205E455"));
+                    var writeCharacteristic = await service.GetCharacteristicAsync(Guid.Parse("49535343-1E4D-4BD9-BA61-23C647249616"));
+                    var bytesToWrite = await writeCharacteristic.WriteAsync(connectedDev._DataToSend);
+
+                    writeCharacteristic.ValueUpdated += (o, args) =>
+                    {
+                        connectedDev._Response = args.Characteristic.Value;
+                    };
+
+                    await writeCharacteristic.StartUpdatesAsync();
                 }
-                catch (DeviceConnectionException ex)
+                catch (Exception ex)
                 {
                     MessagingCenter.Send(this, "Exception", ex.Message);
-                }
-                catch (Exception e)
-                {
-                    MessagingCenter.Send(this, "Exception", e.Message);
                 }
             }
         }
