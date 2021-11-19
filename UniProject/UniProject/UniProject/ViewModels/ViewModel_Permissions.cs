@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
-namespace UniProject.ViewModels
+namespace PED_Gen_2_Debug_App.ViewModels
 {
     // The following dangerous permissions are required, which must be specifically checked for at run time.
     // Android

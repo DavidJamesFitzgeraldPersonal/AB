@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <AssemblyName>PED_Gen_2_Debug_App</AssemblyName>
+    <RootNamespace>PED_Gen_2_Debug_App</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Assets\Images\Device_Locked\res\**" />
+    <Compile Remove="Assets\Images\Device_Unlocked\res\**" />
+    <EmbeddedResource Remove="Assets\Images\Device_Locked\res\**" />
+    <EmbeddedResource Remove="Assets\Images\Device_Unlocked\res\**" />
+    <None Remove="Assets\Images\Device_Locked\res\**" />
+    <None Remove="Assets\Images\Device_Unlocked\res\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Images\Splash.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Images\Splash.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mono.Cecil" Version="0.10.3" />
+    <PackageReference Include="PCLCrypto" Version="2.1.40-alpha" />
+    <PackageReference Include="Plugin.BLE" Version="2.1.1" />
+    <PackageReference Include="Plugin.Fingerprint" Version="2.1.4" />
+    <PackageReference Include="Plugin.Permissions" Version="6.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v11.0\Mono.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="View\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="View\ControlPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

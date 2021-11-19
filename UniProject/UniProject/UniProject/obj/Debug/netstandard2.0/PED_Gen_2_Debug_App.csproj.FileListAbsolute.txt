@@ -1,0 +1,16 @@
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\bin\Debug\netstandard2.0\PED_Gen_2_Debug_App.deps.json
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\bin\Debug\netstandard2.0\PED_Gen_2_Debug_App.dll
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\bin\Debug\netstandard2.0\ref\PED_Gen_2_Debug_App.dll
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\bin\Debug\netstandard2.0\PED_Gen_2_Debug_App.pdb
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\View\App.xaml.g.cs
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\View\ControlPage.xaml.g.cs
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\View\HomePage.xaml.g.cs
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\View\MainPage.xaml.g.cs
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\PED_Gen_2_Debug_App.AssemblyInfoInputs.cache
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\PED_Gen_2_Debug_App.AssemblyInfo.cs
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\PED_Gen_2_Debug_App.csproj.CoreCompileInputs.cache
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\PED_Gen_2_Debug_App.dll
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\ref\PED_Gen_2_Debug_App.dll
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\PED_Gen_2_Debug_App.pdb
+C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\PED_Gen_2_Debug_App.csproj.AssemblyReference.cache

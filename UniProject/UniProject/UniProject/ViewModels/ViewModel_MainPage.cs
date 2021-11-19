@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 using Xamarin.Forms;
-namespace UniProject.ViewModels
+namespace PED_Gen_2_Debug_App.ViewModels
 {
     public class ViewModel_MainPage : BindableObject
     {

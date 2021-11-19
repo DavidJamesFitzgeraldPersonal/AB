@@ -23,8 +23,8 @@
 	.section	.rodata.env.str.1,"aMS",%progbits,1
 	.type	.L.env.str.1, %object
 .L.env.str.1:
-	.asciz	"com.companyname.uniproject"
-	.size	.L.env.str.1, 27
+	.asciz	"com.companyname.PED_Gen_2_Debug_App"
+	.size	.L.env.str.1, 36
 	.section	.data.application_config,"aw",%progbits
 	.type	application_config, %object
 	.p2align	2
@@ -92,7 +92,7 @@ mono_aot_mode_name:
 	.section	.rodata.env.str.8,"aMS",%progbits,1
 	.type	.L.env.str.8, %object
 .L.env.str.8:
-	.asciz	"50085a02-a5c3-4c0e-884c-8a9480ca59c6"
+	.asciz	"322936c9-fd10-4bd9-90a1-3c9acb88f86d"
 	.size	.L.env.str.8, 37
 	.section	.rodata.env.str.9,"aMS",%progbits,1
 	.type	.L.env.str.9, %object

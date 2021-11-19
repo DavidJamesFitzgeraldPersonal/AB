@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
-            xmlns:local="clr-namespace:UniProject"
+            xmlns:local="clr-namespace:PED_Gen_2_Debug_App"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            x:Class="UniProject.HomePage"
+            x:Class="PED_Gen_2_Debug_App.HomePage"
             BackgroundColor="{StaticResource blueColor}"
             NavigationPage.HasBackButton="False">
 

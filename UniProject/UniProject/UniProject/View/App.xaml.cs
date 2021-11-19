@@ -1,5 +1,5 @@
 ﻿using Xamarin.Forms;
-namespace UniProject
+namespace PED_Gen_2_Debug_App
 {
     public partial class App : Application
     {

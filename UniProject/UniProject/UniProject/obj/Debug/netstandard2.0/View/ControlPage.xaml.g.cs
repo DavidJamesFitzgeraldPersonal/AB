@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("UniProject.View.ControlPage.xaml", "View/ControlPage.xaml", typeof(global::UniProject.ControlPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("PED_Gen_2_Debug_App.View.ControlPage.xaml", "View/ControlPage.xaml", typeof(global::PED_Gen_2_Debug_App.ControlPage))]
 
-namespace UniProject {
+namespace PED_Gen_2_Debug_App {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\ControlPage.xaml")]

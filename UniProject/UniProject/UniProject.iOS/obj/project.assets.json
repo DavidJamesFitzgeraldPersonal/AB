@@ -442,7 +442,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "UniProject/1.0.0": {
+      "PED_Gen_2_Debug_App/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -455,10 +455,10 @@
           "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
-          "bin/placeholder/UniProject.dll": {}
+          "bin/placeholder/PED_Gen_2_Debug_App.dll": {}
         },
         "runtime": {
-          "bin/placeholder/UniProject.dll": {}
+          "bin/placeholder/PED_Gen_2_Debug_App.dll": {}
         }
       }
     },
@@ -873,7 +873,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "UniProject/1.0.0": {
+      "PED_Gen_2_Debug_App/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -886,10 +886,10 @@
           "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
-          "bin/placeholder/UniProject.dll": {}
+          "bin/placeholder/PED_Gen_2_Debug_App.dll": {}
         },
         "runtime": {
-          "bin/placeholder/UniProject.dll": {}
+          "bin/placeholder/PED_Gen_2_Debug_App.dll": {}
         }
       }
     },
@@ -1304,7 +1304,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "UniProject/1.0.0": {
+      "PED_Gen_2_Debug_App/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1317,10 +1317,10 @@
           "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
-          "bin/placeholder/UniProject.dll": {}
+          "bin/placeholder/PED_Gen_2_Debug_App.dll": {}
         },
         "runtime": {
-          "bin/placeholder/UniProject.dll": {}
+          "bin/placeholder/PED_Gen_2_Debug_App.dll": {}
         }
       }
     },
@@ -1735,7 +1735,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "UniProject/1.0.0": {
+      "PED_Gen_2_Debug_App/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1748,10 +1748,10 @@
           "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
-          "bin/placeholder/UniProject.dll": {}
+          "bin/placeholder/PED_Gen_2_Debug_App.dll": {}
         },
         "runtime": {
-          "bin/placeholder/UniProject.dll": {}
+          "bin/placeholder/PED_Gen_2_Debug_App.dll": {}
         }
       }
     }
@@ -2888,18 +2888,18 @@
         "xamarin.forms.nuspec"
       ]
     },
-    "UniProject/1.0.0": {
+    "PED_Gen_2_Debug_App/1.0.0": {
       "type": "project",
-      "path": "../UniProject/UniProject.csproj",
-      "msbuildProject": "../UniProject/UniProject.csproj"
+      "path": "../UniProject/PED_Gen_2_Debug_App.csproj",
+      "msbuildProject": "../UniProject/PED_Gen_2_Debug_App.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
       "PCLCrypto >= 2.1.40-alpha",
+      "PED_Gen_2_Debug_App >= 1.0.0",
       "Plugin.BLE >= 2.1.1",
       "Plugin.Fingerprint >= 2.1.4",
-      "UniProject >= 1.0.0",
       "Xamarin.Essentials >= 1.6.1",
       "Xamarin.Forms >= 5.0.0.2012"
     ]
@@ -2912,9 +2912,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject.iOS\\UniProject.iOS.csproj",
-      "projectName": "UniProject.iOS",
-      "projectPath": "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject.iOS\\UniProject.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject.iOS\\PED_Gen_2_Debug_App.iOS.csproj",
+      "projectName": "PED_Gen_2_Debug_App.iOS",
+      "projectPath": "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject.iOS\\PED_Gen_2_Debug_App.iOS.csproj",
       "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject.iOS\\obj\\",
       "projectStyle": "PackageReference",
@@ -2939,8 +2939,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject\\UniProject.csproj": {
-              "projectPath": "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject\\UniProject.csproj"
+            "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject\\PED_Gen_2_Debug_App.csproj": {
+              "projectPath": "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject\\PED_Gen_2_Debug_App.csproj"
             }
           }
         }

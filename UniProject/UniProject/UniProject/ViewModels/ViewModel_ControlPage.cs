@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Plugin.BLE;
 using Plugin.BLE.Abstractions.Exceptions;
-namespace UniProject.ViewModels
+namespace PED_Gen_2_Debug_App.ViewModels
 {
     public class ViewModel_ControlPage : BindableObject
     {
@@ -144,9 +145,6 @@ namespace UniProject.ViewModels
             };
             #endregion
 
-            //DEBUG
-            Models.Model_Device model = new Models.Model_Device("debug");
-         //   _Devices.Add(model);
             _backgroundTimer.Elapsed += _backgroundTimer_Elapsed;
             DoBLEScan();
         }
@@ -198,16 +196,27 @@ namespace UniProject.ViewModels
                 }
                 else
                 {
-                    /*
                     _InfoString = "Devices found. Cleaning list.";
+
+                    List<string> names = new List<string>();
+
                     for (int i = 0; i < k; i++)
                     {
                         if (_Devices[i]._Connection._Old && _Devices[i] != null)
                         {
                             _Devices.RemoveAt(i);
                         }
+                        else 
+                        {
+                            if(names.Contains(_Devices[i]._Name))
+                            {
+                                _Devices.RemoveAt(i);
+                            }
+                            else
+                            { names.Add(_Devices[i]._Name); }
+                        }
                     }
-                    */
+
                     _InfoString = "Updating Devices.";
                     DoStateUpdates();
                     _InfoString = "";
@@ -253,7 +262,22 @@ namespace UniProject.ViewModels
         {
             Models.Model_Device Dev = new Models.Model_Device(foundDev.Name);
             Dev._Connection = new Models.Model_BleConnection(foundDev);
-            _Devices.Add(Dev);
+            bool addDev = true;
+
+            int k = _Devices.Count;
+            for(int i=0; i < k; i++)
+            {
+                if(_Devices[i]._Name == Dev._Name)
+                {
+                    addDev = false;
+                    break;
+                }
+            }
+
+            if (addDev)
+            {
+                _Devices.Add(Dev);
+            }
         }
         private void DoStateUpdates()
         {
@@ -262,6 +286,7 @@ namespace UniProject.ViewModels
                 DoUpdate(existingDev);
             }
         }
+        bool sent = false;
         private void DoUpdate(Models.Model_Device thisDev)
         {
             if (false == _bleHW.IsScanning)
@@ -288,6 +313,7 @@ namespace UniProject.ViewModels
                                 Data[9] = 0x00;
                                 Data[10] = 0x45;
                                 Data[11] = 0x04;
+ 
                                 break;
 
                             case Models.Model_Device.DataSource.REAL:
@@ -305,10 +331,15 @@ namespace UniProject.ViewModels
                                 Data[8] = 0x00;
                                 Data[9] = 0x21;
                                 Data[10] = 0x04;
+                               
                                 break;
                         }
                         thisDev._DataToSend = Data;
-                        DoDataTransfer(thisDev);
+                        if (!sent)
+                        {
+                            //sent = true;
+                            DoDataTransfer(thisDev);
+                        }
                     }
                     else
                     {
@@ -338,16 +369,10 @@ namespace UniProject.ViewModels
                  */
                 try
                 {
-                    var service = await connectedDev._Connection._Dev.GetServiceAsync(Guid.Parse("49535343-FE7D-4AE5-8FA9-9FAFD205E455"));
-                    var writeCharacteristic = await service.GetCharacteristicAsync(Guid.Parse("49535343-1E4D-4BD9-BA61-23C647249616"));
-                    var bytesToWrite = await writeCharacteristic.WriteAsync(connectedDev._DataToSend);
-
-                    writeCharacteristic.ValueUpdated += (o, args) =>
+                    if (false == connectedDev._ExpectingResponse)
                     {
-                        connectedDev._Response = args.Characteristic.Value;
-                    };
-
-                    await writeCharacteristic.StartUpdatesAsync();
+                        connectedDev.Send();
+                    }
                 }
                 catch (Exception ex)
                 {

@@ -1,6 +1,6 @@
 ﻿using Plugin.BLE;
 using System.Collections.Generic;
-namespace UniProject.ViewModels
+namespace PED_Gen_2_Debug_App.ViewModels
 {
     public static class ViewModel_BLE
     {

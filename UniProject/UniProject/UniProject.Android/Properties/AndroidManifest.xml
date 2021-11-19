@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.uniproject" android:installLocation="preferExternal">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.PED_Gen_2_Debug_App" android:installLocation="preferExternal">
 	<uses-sdk android:minSdkVersion="30" android:targetSdkVersion="30" />
-	<application android:label="UniProject.Android" android:theme="@style/MainTheme" android:icon="@mipmap/launcher_foreground"></application>
+	<application android:label="PED_Gen_2_Debug_App.Android" android:theme="@style/MainTheme" android:icon="@mipmap/launcher_foreground"></application>
 	<uses-permission android:name="android.permission.USE_FINGERPRINT" />
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />

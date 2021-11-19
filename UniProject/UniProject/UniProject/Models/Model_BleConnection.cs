@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace UniProject.Models
+namespace PED_Gen_2_Debug_App.Models
 {
     public class Model_BleConnection : BindableObject
     {

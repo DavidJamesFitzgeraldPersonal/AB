@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-namespace UniProject
+namespace PED_Gen_2_Debug_App
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage

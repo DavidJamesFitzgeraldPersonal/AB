@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniProject.Android", "UniProject\UniProject.Android\UniProject.Android.csproj", "{124EF6CF-9347-4AD6-88F0-AAB6BF7B7A31}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PED_Gen_2_Debug_App.Android", "UniProject\UniProject.Android\PED_Gen_2_Debug_App.Android.csproj", "{124EF6CF-9347-4AD6-88F0-AAB6BF7B7A31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniProject.iOS", "UniProject\UniProject.iOS\UniProject.iOS.csproj", "{DE30A563-4190-429F-ABD1-A88DC70D801A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PED_Gen_2_Debug_App.iOS", "UniProject\UniProject.iOS\PED_Gen_2_Debug_App.iOS.csproj", "{DE30A563-4190-429F-ABD1-A88DC70D801A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniProject", "UniProject\UniProject\UniProject.csproj", "{12245145-9ACB-4B99-AE7F-71FEEE88698E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PED_Gen_2_Debug_App", "UniProject\UniProject\PED_Gen_2_Debug_App.csproj", "{12245145-9ACB-4B99-AE7F-71FEEE88698E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

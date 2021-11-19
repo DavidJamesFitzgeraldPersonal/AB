@@ -11559,7 +11559,7 @@ map_managed_to_java:
 	.quad	.L.managed_type_name.5775
 	.quad	.L.java_type_name.5479
 	.quad	.L.managed_type_name.5776
-	.quad	.L.java_type_name.6201
+	.quad	.L.java_type_name.6202
 	.quad	.L.managed_type_name.5777
 	.quad	.L.java_type_name.5480
 	.quad	.L.managed_type_name.5778
@@ -11569,7 +11569,7 @@ map_managed_to_java:
 	.quad	.L.managed_type_name.5780
 	.quad	.L.java_type_name.5483
 	.quad	.L.managed_type_name.5781
-	.quad	.L.java_type_name.6202
+	.quad	.L.java_type_name.6203
 	.quad	.L.managed_type_name.5782
 	.quad	.L.java_type_name.5484
 	.quad	.L.managed_type_name.5783
@@ -11611,9 +11611,9 @@ map_managed_to_java:
 	.quad	.L.managed_type_name.5801
 	.quad	.L.java_type_name.5502
 	.quad	.L.managed_type_name.5802
-	.quad	.L.java_type_name.6204
+	.quad	.L.java_type_name.6205
 	.quad	.L.managed_type_name.5803
-	.quad	.L.java_type_name.6203
+	.quad	.L.java_type_name.6204
 	.quad	.L.managed_type_name.5804
 	.quad	.L.java_type_name.5503
 	.quad	.L.managed_type_name.5805
@@ -17583,57 +17583,57 @@ map_managed_to_java:
 	.quad	.L.managed_type_name.8787
 	.quad	.L.java_type_name.9026
 	.quad	.L.managed_type_name.8788
-	.quad	.L.java_type_name.5969
+	.quad	.L.java_type_name.6166
 	.quad	.L.managed_type_name.8789
-	.quad	.L.java_type_name.5970
+	.quad	.L.java_type_name.5969
 	.quad	.L.managed_type_name.8790
-	.quad	.L.java_type_name.5971
+	.quad	.L.java_type_name.5970
 	.quad	.L.managed_type_name.8791
-	.quad	.L.java_type_name.5967
+	.quad	.L.java_type_name.5971
 	.quad	.L.managed_type_name.8792
-	.quad	.L.java_type_name.5968
+	.quad	.L.java_type_name.5967
 	.quad	.L.managed_type_name.8793
-	.quad	.L.java_type_name.6206
+	.quad	.L.java_type_name.5968
 	.quad	.L.managed_type_name.8794
-	.quad	.L.java_type_name.6205
+	.quad	.L.java_type_name.6206
 	.quad	.L.managed_type_name.8795
 	.quad	.L.java_type_name.9027
 	.quad	.L.managed_type_name.8796
-	.quad	.L.java_type_name.6184
-	.quad	.L.managed_type_name.8797
 	.quad	.L.java_type_name.6185
-	.quad	.L.managed_type_name.8798
+	.quad	.L.managed_type_name.8797
 	.quad	.L.java_type_name.6186
-	.quad	.L.managed_type_name.8799
+	.quad	.L.managed_type_name.8798
 	.quad	.L.java_type_name.6187
-	.quad	.L.managed_type_name.8800
+	.quad	.L.managed_type_name.8799
 	.quad	.L.java_type_name.6188
-	.quad	.L.managed_type_name.8801
+	.quad	.L.managed_type_name.8800
 	.quad	.L.java_type_name.6189
-	.quad	.L.managed_type_name.8802
+	.quad	.L.managed_type_name.8801
 	.quad	.L.java_type_name.6190
+	.quad	.L.managed_type_name.8802
+	.quad	.L.java_type_name.6191
 	.quad	.L.managed_type_name.8803
 	.quad	.L.java_type_name.9028
 	.quad	.L.managed_type_name.8804
-	.quad	.L.java_type_name.6191
-	.quad	.L.managed_type_name.8805
 	.quad	.L.java_type_name.6192
-	.quad	.L.managed_type_name.8806
+	.quad	.L.managed_type_name.8805
 	.quad	.L.java_type_name.6193
-	.quad	.L.managed_type_name.8807
+	.quad	.L.managed_type_name.8806
 	.quad	.L.java_type_name.6194
-	.quad	.L.managed_type_name.8808
+	.quad	.L.managed_type_name.8807
 	.quad	.L.java_type_name.6195
-	.quad	.L.managed_type_name.8809
+	.quad	.L.managed_type_name.8808
 	.quad	.L.java_type_name.6196
-	.quad	.L.managed_type_name.8810
+	.quad	.L.managed_type_name.8809
 	.quad	.L.java_type_name.6197
-	.quad	.L.managed_type_name.8811
+	.quad	.L.managed_type_name.8810
 	.quad	.L.java_type_name.6198
-	.quad	.L.managed_type_name.8812
+	.quad	.L.managed_type_name.8811
 	.quad	.L.java_type_name.6199
-	.quad	.L.managed_type_name.8813
+	.quad	.L.managed_type_name.8812
 	.quad	.L.java_type_name.6200
+	.quad	.L.managed_type_name.8813
+	.quad	.L.java_type_name.6201
 	.quad	.L.managed_type_name.8814
 	.quad	.L.java_type_name.5976
 	.quad	.L.managed_type_name.8815
@@ -17643,41 +17643,41 @@ map_managed_to_java:
 	.quad	.L.managed_type_name.8817
 	.quad	.L.java_type_name.5979
 	.quad	.L.managed_type_name.8818
-	.quad	.L.java_type_name.6166
-	.quad	.L.managed_type_name.8819
 	.quad	.L.java_type_name.6167
-	.quad	.L.managed_type_name.8820
+	.quad	.L.managed_type_name.8819
 	.quad	.L.java_type_name.6168
-	.quad	.L.managed_type_name.8821
+	.quad	.L.managed_type_name.8820
 	.quad	.L.java_type_name.6169
-	.quad	.L.managed_type_name.8822
+	.quad	.L.managed_type_name.8821
 	.quad	.L.java_type_name.6170
-	.quad	.L.managed_type_name.8823
+	.quad	.L.managed_type_name.8822
 	.quad	.L.java_type_name.6171
-	.quad	.L.managed_type_name.8824
+	.quad	.L.managed_type_name.8823
 	.quad	.L.java_type_name.6172
-	.quad	.L.managed_type_name.8825
-	.quad	.L.java_type_name.6174
-	.quad	.L.managed_type_name.8826
-	.quad	.L.java_type_name.6175
-	.quad	.L.managed_type_name.8827
-	.quad	.L.java_type_name.6176
-	.quad	.L.managed_type_name.8828
+	.quad	.L.managed_type_name.8824
 	.quad	.L.java_type_name.6173
-	.quad	.L.managed_type_name.8829
+	.quad	.L.managed_type_name.8825
+	.quad	.L.java_type_name.6175
+	.quad	.L.managed_type_name.8826
+	.quad	.L.java_type_name.6176
+	.quad	.L.managed_type_name.8827
 	.quad	.L.java_type_name.6177
-	.quad	.L.managed_type_name.8830
+	.quad	.L.managed_type_name.8828
+	.quad	.L.java_type_name.6174
+	.quad	.L.managed_type_name.8829
 	.quad	.L.java_type_name.6178
-	.quad	.L.managed_type_name.8831
+	.quad	.L.managed_type_name.8830
 	.quad	.L.java_type_name.6179
-	.quad	.L.managed_type_name.8832
+	.quad	.L.managed_type_name.8831
 	.quad	.L.java_type_name.6180
-	.quad	.L.managed_type_name.8833
+	.quad	.L.managed_type_name.8832
 	.quad	.L.java_type_name.6181
-	.quad	.L.managed_type_name.8834
+	.quad	.L.managed_type_name.8833
 	.quad	.L.java_type_name.6182
-	.quad	.L.managed_type_name.8835
+	.quad	.L.managed_type_name.8834
 	.quad	.L.java_type_name.6183
+	.quad	.L.managed_type_name.8835
+	.quad	.L.java_type_name.6184
 	.quad	.L.managed_type_name.8836
 	.quad	.L.java_type_name.5980
 	.quad	.L.managed_type_name.8837
@@ -30007,15 +30007,15 @@ map_java_to_managed:
 	.quad	.L.java_type_name.5966
 	.quad	.L.managed_type_name.5874
 	.quad	.L.java_type_name.5967
-	.quad	.L.managed_type_name.8791
-	.quad	.L.java_type_name.5968
 	.quad	.L.managed_type_name.8792
+	.quad	.L.java_type_name.5968
+	.quad	.L.managed_type_name.8793
 	.quad	.L.java_type_name.5969
-	.quad	.L.managed_type_name.8788
-	.quad	.L.java_type_name.5970
 	.quad	.L.managed_type_name.8789
-	.quad	.L.java_type_name.5971
+	.quad	.L.java_type_name.5970
 	.quad	.L.managed_type_name.8790
+	.quad	.L.java_type_name.5971
+	.quad	.L.managed_type_name.8791
 	.quad	.L.java_type_name.5972
 	.quad	0
 	.quad	.L.java_type_name.5973
@@ -30405,87 +30405,87 @@ map_java_to_managed:
 	.quad	.L.java_type_name.6165
 	.quad	.L.managed_type_name.9027
 	.quad	.L.java_type_name.6166
-	.quad	.L.managed_type_name.8818
+	.quad	.L.managed_type_name.8788
 	.quad	.L.java_type_name.6167
-	.quad	.L.managed_type_name.8819
+	.quad	.L.managed_type_name.8818
 	.quad	.L.java_type_name.6168
-	.quad	0
+	.quad	.L.managed_type_name.8819
 	.quad	.L.java_type_name.6169
-	.quad	.L.managed_type_name.8821
+	.quad	0
 	.quad	.L.java_type_name.6170
-	.quad	.L.managed_type_name.8822
+	.quad	.L.managed_type_name.8821
 	.quad	.L.java_type_name.6171
-	.quad	.L.managed_type_name.8823
+	.quad	.L.managed_type_name.8822
 	.quad	.L.java_type_name.6172
-	.quad	.L.managed_type_name.8824
+	.quad	.L.managed_type_name.8823
 	.quad	.L.java_type_name.6173
-	.quad	.L.managed_type_name.8828
+	.quad	.L.managed_type_name.8824
 	.quad	.L.java_type_name.6174
-	.quad	.L.managed_type_name.8825
+	.quad	.L.managed_type_name.8828
 	.quad	.L.java_type_name.6175
-	.quad	.L.managed_type_name.8826
+	.quad	.L.managed_type_name.8825
 	.quad	.L.java_type_name.6176
-	.quad	.L.managed_type_name.8827
+	.quad	.L.managed_type_name.8826
 	.quad	.L.java_type_name.6177
-	.quad	.L.managed_type_name.8829
+	.quad	.L.managed_type_name.8827
 	.quad	.L.java_type_name.6178
-	.quad	0
+	.quad	.L.managed_type_name.8829
 	.quad	.L.java_type_name.6179
-	.quad	.L.managed_type_name.8831
-	.quad	.L.java_type_name.6180
-	.quad	.L.managed_type_name.8832
-	.quad	.L.java_type_name.6181
-	.quad	.L.managed_type_name.8833
-	.quad	.L.java_type_name.6182
-	.quad	.L.managed_type_name.8834
-	.quad	.L.java_type_name.6183
 	.quad	0
+	.quad	.L.java_type_name.6180
+	.quad	.L.managed_type_name.8831
+	.quad	.L.java_type_name.6181
+	.quad	.L.managed_type_name.8832
+	.quad	.L.java_type_name.6182
+	.quad	.L.managed_type_name.8833
+	.quad	.L.java_type_name.6183
+	.quad	.L.managed_type_name.8834
 	.quad	.L.java_type_name.6184
-	.quad	.L.managed_type_name.8796
+	.quad	0
 	.quad	.L.java_type_name.6185
-	.quad	.L.managed_type_name.8797
+	.quad	.L.managed_type_name.8796
 	.quad	.L.java_type_name.6186
-	.quad	.L.managed_type_name.8798
+	.quad	.L.managed_type_name.8797
 	.quad	.L.java_type_name.6187
-	.quad	.L.managed_type_name.8799
+	.quad	.L.managed_type_name.8798
 	.quad	.L.java_type_name.6188
-	.quad	.L.managed_type_name.8800
+	.quad	.L.managed_type_name.8799
 	.quad	.L.java_type_name.6189
-	.quad	.L.managed_type_name.8801
+	.quad	.L.managed_type_name.8800
 	.quad	.L.java_type_name.6190
-	.quad	.L.managed_type_name.8802
+	.quad	.L.managed_type_name.8801
 	.quad	.L.java_type_name.6191
-	.quad	.L.managed_type_name.8804
+	.quad	.L.managed_type_name.8802
 	.quad	.L.java_type_name.6192
-	.quad	.L.managed_type_name.8805
+	.quad	.L.managed_type_name.8804
 	.quad	.L.java_type_name.6193
-	.quad	.L.managed_type_name.8806
+	.quad	.L.managed_type_name.8805
 	.quad	.L.java_type_name.6194
-	.quad	.L.managed_type_name.8807
+	.quad	.L.managed_type_name.8806
 	.quad	.L.java_type_name.6195
-	.quad	.L.managed_type_name.8808
+	.quad	.L.managed_type_name.8807
 	.quad	.L.java_type_name.6196
-	.quad	.L.managed_type_name.8809
+	.quad	.L.managed_type_name.8808
 	.quad	.L.java_type_name.6197
-	.quad	.L.managed_type_name.8810
+	.quad	.L.managed_type_name.8809
 	.quad	.L.java_type_name.6198
-	.quad	.L.managed_type_name.8811
+	.quad	.L.managed_type_name.8810
 	.quad	.L.java_type_name.6199
-	.quad	.L.managed_type_name.8812
+	.quad	.L.managed_type_name.8811
 	.quad	.L.java_type_name.6200
-	.quad	.L.managed_type_name.8813
+	.quad	.L.managed_type_name.8812
 	.quad	.L.java_type_name.6201
-	.quad	.L.managed_type_name.5776
+	.quad	.L.managed_type_name.8813
 	.quad	.L.java_type_name.6202
-	.quad	.L.managed_type_name.5781
+	.quad	.L.managed_type_name.5776
 	.quad	.L.java_type_name.6203
-	.quad	.L.managed_type_name.5803
+	.quad	.L.managed_type_name.5781
 	.quad	.L.java_type_name.6204
-	.quad	.L.managed_type_name.5802
+	.quad	.L.managed_type_name.5803
 	.quad	.L.java_type_name.6205
-	.quad	.L.managed_type_name.8794
+	.quad	.L.managed_type_name.5802
 	.quad	.L.java_type_name.6206
-	.quad	.L.managed_type_name.8793
+	.quad	.L.managed_type_name.8794
 	.quad	.L.java_type_name.6207
 	.quad	.L.managed_type_name.8882
 	.quad	.L.java_type_name.6208

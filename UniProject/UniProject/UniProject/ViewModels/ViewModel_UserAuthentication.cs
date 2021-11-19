@@ -2,7 +2,7 @@
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
 using Xamarin.Forms;
-namespace UniProject.ViewModels
+namespace PED_Gen_2_Debug_App.ViewModels
 {
     public static class VM_UserAuthentication
     {

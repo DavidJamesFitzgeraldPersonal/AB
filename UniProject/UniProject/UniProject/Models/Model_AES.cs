@@ -1,7 +1,7 @@
 ﻿using PCLCrypto;
 using System;
 
-namespace UniProject.Models
+namespace PED_Gen_2_Debug_App.Models
 {
     public static class Model_AES
     {

@@ -3426,9 +3426,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject\\UniProject.csproj",
-      "projectName": "UniProject",
-      "projectPath": "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject\\UniProject.csproj",
+      "projectUniqueName": "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject\\PED_Gen_2_Debug_App.csproj",
+      "projectName": "PED_Gen_2_Debug_App",
+      "projectPath": "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject\\PED_Gen_2_Debug_App.csproj",
       "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject\\obj\\",
       "projectStyle": "PackageReference",

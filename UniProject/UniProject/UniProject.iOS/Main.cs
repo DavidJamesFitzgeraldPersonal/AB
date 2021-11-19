@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace UniProject.iOS
+namespace PED_Gen_2_Debug_App.iOS
 {
     public class Application
     {

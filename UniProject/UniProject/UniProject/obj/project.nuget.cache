@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DjCcmVHYlgVXYZPRN5PwJrzoad3eQvA6J3UdVSGAhQBjqHAUM+upjotM3cL/0BVUj52HFo2Opu0WISLdtbFWhg==",
+  "dgSpecHash": "RPkCBsIApsOzl3GuKAO37EKDP95hWsA8Qrv2qRqB+Ypom56d868IUE3FIHgdRGxYW85ZgBBynjMt067esE4jaw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject\\UniProject.csproj",
+  "projectFilePath": "C:\\Users\\david\\Documents\\GitHub Personal\\AB\\UniProject\\UniProject\\UniProject\\PED_Gen_2_Debug_App.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\david\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\david\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
