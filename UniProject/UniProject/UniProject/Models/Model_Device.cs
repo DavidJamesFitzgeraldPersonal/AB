@@ -142,12 +142,17 @@ namespace PED_Gen_2_Debug_App.Models
 
             for (int i = startsAt; (i < _Response.Length) && (!fullMessage) && (!error); i++)
             {
+                const int _DOSEVISION_EXPECTED_START_COUNT = 2;
+                const int _DOSEVISION_START_CHAR    = 0x55;
+                const int _DOSEVISION_BREAK_CHAR    = 0x05;
+                const int _DOSEVISION_END_CHAR      = 0x04;
+
                 error = false;
                 store = false;
 
-                if (startCharCount < 2)
+                if (startCharCount < _DOSEVISION_EXPECTED_START_COUNT)
                 {
-                    if(0x55 == bytes[i])
+                    if(_DOSEVISION_START_CHAR == bytes[i])
                     {
                         startCharCount++;
                     }
@@ -156,15 +161,15 @@ namespace PED_Gen_2_Debug_App.Models
                 {
                     if (false == escaped)
                     {
-                        if (bytes[i] == 0x55)
+                        if (bytes[i] == _DOSEVISION_START_CHAR)
                         {
                             error = true;
                         }
-                        else if (bytes[i] == 0x05)
+                        else if (bytes[i] == _DOSEVISION_BREAK_CHAR)
                         {
                             escaped = true;
                         }
-                        else if (bytes[i] == 0x04)
+                        else if (bytes[i] == _DOSEVISION_END_CHAR)
                         {
                             if(decodedBytes.Count > 1)
                             {
