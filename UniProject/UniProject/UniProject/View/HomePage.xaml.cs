@@ -13,7 +13,7 @@ namespace PED_Gen_2_Debug_App
         {
             InitializeComponent();
 
-            MessagingCenter.Subscribe<ViewModels.ViewModel_ControlPage, string>(this, "Exception", async (sender, arg) =>
+            MessagingCenter.Subscribe<ViewModels.ViewModel_ScanPage, string>(this, "Exception", async (sender, arg) =>
             {
                 await DisplayAlert("Exception", arg, "OK");
             });

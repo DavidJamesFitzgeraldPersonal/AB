@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PED_Gen_2_Debug_App.MainPage"
+             BackgroundColor="{StaticResource blueColor}">
+
+    <StackLayout VerticalOptions="Center"
+                 Margin="20">
+
+        <Image Source="Splash.png" Margin="2,2,2,2"/>
+        
+        <Label Text="PED GEN2 debug app" HorizontalOptions="CenterAndExpand" FontSize="32" TextColor="White"/>
+
+        <Button Text="Log in"
+                Command="{Binding Path=_LoginClicked}"
+                Style="{StaticResource normalButton}"/>
+    </StackLayout>
+
+</ContentPage>

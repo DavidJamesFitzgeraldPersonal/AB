@@ -92,8 +92,12 @@ namespace PED_Gen_2_Debug_App.Models
 
         private DataSource _commandedState = DataSource.NONE;
         public DataSource _CommandedState { get; set; }
+        public Boolean _IsFakeData
+        {
+            get { return (DataSource.FAKE == _dataSource); }
+        }
 
-        public Model_BleConnection _Connection;
+        public Model_BleConnection _Connection { get; set; }
         #endregion
 
         #region Constructor
@@ -123,7 +127,6 @@ namespace PED_Gen_2_Debug_App.Models
 
             await writeCharacteristic.StartUpdatesAsync();
         }
-
         private async void CheckForResponse()
         {
             var service = await _Connection._Dev.GetServiceAsync(Guid.Parse("49535343-FE7D-4AE5-8FA9-9FAFD205E455"));

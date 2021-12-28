@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PED_Gen_2_Debug_App.SelectedDevicePage"
+             BackgroundColor="{StaticResource blueColor}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid RowSpacing="0" ColumnSpacing="0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!--
+                <Grid Grid.Row="0" Grid.Column= "0" BackgroundColor="green"/>
+                <Grid Grid.Row="1" Grid.Column= "0" BackgroundColor="green"/>
+
+                <Grid Grid.Row="0" Grid.Column= "1" BackgroundColor="LightGreen"/>
+                <Grid Grid.Row="1" Grid.Column= "1" BackgroundColor="LightGreen"/>
+                -->
+
+                <Label Grid.Row="0" Grid.Column="0" 
+                       Text="Name:" 
+                       HorizontalOptions="StartAndExpand" 
+                       FontSize ="Body"/>
+                <Label Grid.Row="0" Grid.Column="1" 
+                       Text="{Binding Path=_SelectedDevice._Name}" 
+                       HorizontalOptions="StartAndExpand" 
+                       FontSize ="Body" TextColor="White"/>
+
+                <Label Grid.Row="1" Grid.Column="0" 
+                       Text="GUID:" 
+                       HorizontalOptions="StartAndExpand" 
+                       FontSize ="Body"/>
+                <Label Grid.Row="1" Grid.Column="1" 
+                       Text="{Binding Path=_SelectedDevice._Connection._Dev.Id}" 
+                       HorizontalOptions="StartAndExpand" 
+                       FontSize ="Body" TextColor="White"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <StackLayout>
+                <Label Text="Remote Control:"
+                       FontSize ="Body"/>
+                
+                <Switch x:Name="remoteControlSwitch" 
+                        HorizontalOptions="CenterAndExpand"
+                        Scale="2"
+                        Toggled="remoteControlSwitch_Toggled"/>
+                
+                <Label Text="{Binding Path=_InfoString}"
+                       HorizontalOptions="CenterAndExpand"
+                       FontSize ="Body"/>
+                
+                <Button IsEnabled="{Binding Path=_SelectedDevice._IsFakeData}" 
+                        Text="Flash LEDs"
+                        Command="{Binding Path=_LEDsClicked}"/>
+                
+                <Button IsEnabled="{Binding Path=_SelectedDevice._IsFakeData}" 
+                        Text="Sound Buzzer"
+                        Command="{Binding Path=_BuzzerClicked}"/>
+                
+                <Button IsEnabled="{Binding Path=_SelectedDevice._IsFakeData}" 
+                        Text="Trigger Haptic"
+                        Command="{Binding Path=_HapticClicked}"/>
+            </StackLayout>
+        </Grid>
+    </Grid>
+    
+   
+</ContentPage>
