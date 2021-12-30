@@ -14,4 +14,3 @@ C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj
 C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\PED_Gen_2_Debug_App.dll
 C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\ref\PED_Gen_2_Debug_App.dll
 C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\PED_Gen_2_Debug_App.pdb
-C:\Users\david\Documents\GitHub Personal\AB\UniProject\UniProject\UniProject\obj\Debug\netstandard2.0\PED_Gen_2_Debug_App.csproj.AssemblyReference.cache

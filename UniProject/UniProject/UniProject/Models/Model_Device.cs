@@ -6,6 +6,11 @@ namespace PED_Gen_2_Debug_App.Models
 { 
     public class Model_Device : BindableObject
     {
+        const int _DOSEVISION_EXPECTED_START_COUNT = 2;
+        const int _DOSEVISION_START_CHAR = 0x55;
+        const int _DOSEVISION_BREAK_CHAR = 0x05;
+        const int _DOSEVISION_END_CHAR = 0x04;
+
         #region Enums
         public enum DataSource
         {
@@ -30,6 +35,18 @@ namespace PED_Gen_2_Debug_App.Models
                 _image = value;
                 // Must notify of change to image
                 OnPropertyChanged();
+            }
+        }
+
+        private bool _hasDataToSend;
+        public bool _HasDataToSend
+        {
+            get { return _hasDataToSend; }
+            set
+            {
+                if (value == _hasDataToSend)
+                    return;
+                _hasDataToSend = value;
             }
         }
 
@@ -63,6 +80,20 @@ namespace PED_Gen_2_Debug_App.Models
 
         private byte[] _decodedResponse;
 
+        private bool _isFakeData;
+        public bool _IsFakeData
+        {
+            get { return _isFakeData; }
+            set
+            {
+                if (value == _isFakeData)
+                    return;
+                _isFakeData = value;
+                // Must notify of change to state
+                OnPropertyChanged();
+            }
+        }
+
         private DataSource _dataSource;
         public DataSource _DataSource
         {
@@ -74,14 +105,17 @@ namespace PED_Gen_2_Debug_App.Models
                 _dataSource = value;
                 if (DataSource.FAKE == _dataSource)
                 {
+                    _IsFakeData = true;
                     _Image = "baseline_lock_black_36.png";
                 }
                 else if(DataSource.REAL == _dataSource)
                 {
+                    _IsFakeData = false;
                     _Image = "baseline_lock_open_black_36.png";
                 }
                 else
                 {
+                    _IsFakeData = false;
                     _Image = "baseline_help_center_black_36.png";
                 }
                 // Must notify of change to state
@@ -92,10 +126,6 @@ namespace PED_Gen_2_Debug_App.Models
 
         private DataSource _commandedState = DataSource.NONE;
         public DataSource _CommandedState { get; set; }
-        public Boolean _IsFakeData
-        {
-            get { return (DataSource.FAKE == _dataSource); }
-        }
 
         public Model_BleConnection _Connection { get; set; }
         #endregion
@@ -112,12 +142,42 @@ namespace PED_Gen_2_Debug_App.Models
             _Image = _image;           
         }
         #endregion
+
+        public static byte[] EncodeMessage(byte[] message)
+        {
+            List<byte> encodedBytes = new List<byte>();
+            byte checksum = 0x00;
+
+            for (uint i = 0; i < _DOSEVISION_EXPECTED_START_COUNT; i++)
+            {
+                encodedBytes.Add(_DOSEVISION_START_CHAR);
+            }
+
+            for(uint i = 0; i < message.Length; i++)
+            {
+                checksum += message[i];
+
+                if((_DOSEVISION_START_CHAR == message[i])||
+                    (_DOSEVISION_BREAK_CHAR == message[i]) ||
+                    (_DOSEVISION_END_CHAR == message[i]))
+                {
+                    encodedBytes.Add(_DOSEVISION_BREAK_CHAR);
+                }
+
+                encodedBytes.Add(message[i]);
+            }
+
+            encodedBytes.Add((byte)((~(checksum)+1)&255));
+            encodedBytes.Add(_DOSEVISION_END_CHAR);
+
+            return encodedBytes.ToArray();
+        }
         public async void Send()
         {
             var service = await _Connection._Dev.GetServiceAsync(Guid.Parse("49535343-FE7D-4AE5-8FA9-9FAFD205E455"));
             var writeCharacteristic = await service.GetCharacteristicAsync(Guid.Parse("49535343-1E4D-4BD9-BA61-23C647249616"));
             var bytesToWrite = await writeCharacteristic.WriteAsync(_DataToSend);
-
+            
             _ExpectingResponse = true;
 
             writeCharacteristic.ValueUpdated += (o, args) =>
@@ -145,11 +205,6 @@ namespace PED_Gen_2_Debug_App.Models
 
             for (int i = startsAt; (i < _Response.Length) && (!fullMessage) && (!error); i++)
             {
-                const int _DOSEVISION_EXPECTED_START_COUNT = 2;
-                const int _DOSEVISION_START_CHAR    = 0x55;
-                const int _DOSEVISION_BREAK_CHAR    = 0x05;
-                const int _DOSEVISION_END_CHAR      = 0x04;
-
                 error = false;
                 store = false;
 
@@ -197,15 +252,40 @@ namespace PED_Gen_2_Debug_App.Models
                     if (store)
                     {
                         decodedBytes.Add(bytes[i]);
+                        checksum += bytes[i];
                     }
                 }
             }
 
             if(fullMessage)
             {
+                if(0x00 == checksum)
+                {
+                    _DataToSend = null;
+                    _ExpectingResponse = false;
 
+                   switch(decodedBytes[0])
+                   {
+                        case 0xDF:
+                            if(0x00 == decodedBytes[1])
+                            {
+                                _DataSource = DataSource.REAL;
+                            }
+                            else if (0x01 == decodedBytes[1])
+                            {
+                                _DataSource = DataSource.FAKE;
+                            }
+                            else
+                            {
+                                _DataSource = DataSource.UNKNOWN;
+                            }
+                            break;
+                        default:
+                            break;
+                   }
+                }
             }
-            _expectingResponse = false;
+
         }
     }
 }

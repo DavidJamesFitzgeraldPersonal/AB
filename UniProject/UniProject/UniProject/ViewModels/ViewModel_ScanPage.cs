@@ -247,56 +247,7 @@ namespace PED_Gen_2_Debug_App.ViewModels
             {
                 try
                 {
-                    if (thisDev._DataSource != thisDev._CommandedState && thisDev._CommandedState != Models.Model_Device.DataSource.NONE)
-                    {
-                        byte[] Data;
-                        switch (thisDev._CommandedState)
-                        {
-                            case Models.Model_Device.DataSource.FAKE:
-                                // Send command for 1sv/h
-                                Data = new byte[12];
-                                Data[0] = 0x55;
-                                Data[1] = 0x55;
-                                Data[2] = 0xDF;
-                                Data[3] = 0x00;
-                                Data[4] = 0x01;
-                                Data[5] = 0x05;
-                                Data[6] = 0x05;
-                                Data[7] = 0xF5;
-                                Data[8] = 0xE1;
-                                Data[9] = 0x00;
-                                Data[10] = 0x45;
-                                Data[11] = 0x04;
- 
-                                break;
-
-                            case Models.Model_Device.DataSource.REAL:
-                            default:
-                                // Send command to remove debug mode
-                                Data = new byte[11];
-                                Data[0] = 0x55;
-                                Data[1] = 0x55;
-                                Data[2] = 0xDF;
-                                Data[3] = 0x00;
-                                Data[4] = 0x00;
-                                Data[5] = 0x00;
-                                Data[6] = 0x00;
-                                Data[7] = 0x00;
-                                Data[8] = 0x00;
-                                Data[9] = 0x21;
-                                Data[10] = 0x04;
-                               
-                                break;
-                        }
-                        
-                        thisDev._DataToSend = Data;
-                        DoDataTransfer(thisDev);
-                    }
-                    else
-                    {
-                        // Ensure we dont continually set the lock state
-                        thisDev._CommandedState = Models.Model_Device.DataSource.NONE;
-                    }                    
+                    DoDataTransfer(thisDev);
                 }
                 catch (DeviceConnectionException ex)
                 {
@@ -322,8 +273,9 @@ namespace PED_Gen_2_Debug_App.ViewModels
                  */
                 try
                 {
-                    if (false == connectedDev._ExpectingResponse)
+                    if (true == connectedDev._HasDataToSend || true == connectedDev._ExpectingResponse)
                     {
+                        connectedDev._HasDataToSend = false;
                         connectedDev.Send();
                     }
                 }

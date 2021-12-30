@@ -44,5 +44,10 @@ namespace PED_Gen_2_Debug_App
                 }
             }
         }
+
+        private void rateEntry_Unfocused(object sender, FocusEventArgs e)
+        {
+            _selectedDeviceVM._RequestedRate = rateEntry.Text;
+        }
     }
 }

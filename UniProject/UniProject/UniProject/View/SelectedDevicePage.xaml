@@ -6,8 +6,10 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="10*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
@@ -23,13 +25,13 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <!--
+<!--                
                 <Grid Grid.Row="0" Grid.Column= "0" BackgroundColor="green"/>
                 <Grid Grid.Row="1" Grid.Column= "0" BackgroundColor="green"/>
 
                 <Grid Grid.Row="0" Grid.Column= "1" BackgroundColor="LightGreen"/>
                 <Grid Grid.Row="1" Grid.Column= "1" BackgroundColor="LightGreen"/>
-                -->
+-->
 
                 <Label Grid.Row="0" Grid.Column="0" 
                        Text="Name:" 
@@ -55,30 +57,46 @@
             <StackLayout>
                 <Label Text="Remote Control:"
                        FontSize ="Body"/>
-                
+
                 <Switch x:Name="remoteControlSwitch" 
                         HorizontalOptions="CenterAndExpand"
                         Scale="2"
                         Toggled="remoteControlSwitch_Toggled"/>
-                
+
                 <Label Text="{Binding Path=_InfoString}"
-                       HorizontalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        FontSize ="Body"/>
+
+                <Button x:Name="ledButton"
+                    IsEnabled="{Binding Path=_SelectedDevice._IsFakeData}" 
+                    Text="Flash LEDs"
+                    Command="{Binding Path=_LEDsClicked}"/>
+
+                <Button x:Name="buzzButton"
+                    IsEnabled="{Binding Path=_SelectedDevice._IsFakeData}" 
+                    Text="Sound Buzzer"
+                    Command="{Binding Path=_BuzzerClicked}"/>
+
+                <Button x:Name="hapButton"
+                    IsEnabled="{Binding Path=_SelectedDevice._IsFakeData}" 
+                    Text="Trigger Haptic"
+                    Command="{Binding Path=_HapticClicked}"/>
+            </StackLayout>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <StackLayout>
+                <Label Text="Rate (Sv/h):" 
+                       HorizontalOptions="StartAndExpand" 
                        FontSize ="Body"/>
                 
-                <Button IsEnabled="{Binding Path=_SelectedDevice._IsFakeData}" 
-                        Text="Flash LEDs"
-                        Command="{Binding Path=_LEDsClicked}"/>
-                
-                <Button IsEnabled="{Binding Path=_SelectedDevice._IsFakeData}" 
-                        Text="Sound Buzzer"
-                        Command="{Binding Path=_BuzzerClicked}"/>
-                
-                <Button IsEnabled="{Binding Path=_SelectedDevice._IsFakeData}" 
-                        Text="Trigger Haptic"
-                        Command="{Binding Path=_HapticClicked}"/>
+                <Entry x:Name="rateEntry"
+                       IsEnabled="{Binding Path=_SelectedDevice._IsFakeData}"
+                       Text="1.00"
+                       Unfocused="rateEntry_Unfocused"
+                       HorizontalTextAlignment="Center"
+                       FontSize ="Body" TextColor="White"/>
             </StackLayout>
         </Grid>
     </Grid>
-    
-   
 </ContentPage>
